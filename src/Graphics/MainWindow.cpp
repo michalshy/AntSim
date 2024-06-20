@@ -1,10 +1,14 @@
-#include <SFML/Graphics.hpp>
+//
+// Created by Michin on 20.06.2024.
+//
 
-int main()
-{
-    auto window = sf::RenderWindow{ { 1920u, 1080u }, "CMake SFML Project" };
+#include "MainWindow.hpp"
+
+MainWindow::MainWindow() {
     window.setFramerateLimit(144);
+}
 
+void MainWindow::processEvents() {
     while (window.isOpen())
     {
         for (auto event = sf::Event{}; window.pollEvent(event);)

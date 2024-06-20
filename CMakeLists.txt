@@ -11,6 +11,11 @@ FetchContent_Declare(SFML
         GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(AntSimulator main.cpp)
+add_executable(AntSimulator src/main.cpp
+        src/Simulation/Entities/Ant.hpp
+        src/Simulation/Entities/Ant.cpp
+        src/Graphics/MainWindow.hpp
+        src/Graphics/MainWindow.cpp
+)
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

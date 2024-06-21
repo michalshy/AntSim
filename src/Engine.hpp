@@ -7,15 +7,17 @@
 
 #include "Graphics/MainWindow.hpp"
 #include "Simulation/Entities/Ant.hpp"
-#include "Graphics/TextureManager.hpp"
+#include "Graphics/Textures/FactoryTexture.hpp"
 
 class Engine {
-    TextureManager tM;
+    FactoryTexture *factory = nullptr;
     MainWindow window = MainWindow();
     std::vector<Ant> ants;
 public:
     Engine();
     void Loop();
+
+    ~Engine();
 };
 
 

@@ -18,12 +18,11 @@ add_executable(AntSimulator src/main.cpp
         src/Graphics/MainWindow.cpp
         src/Engine.hpp
         src/Engine.cpp
-        src/Graphics/Textures/AntTexture.hpp
-        src/Graphics/Textures/AntTexture.cpp
-        src/Graphics/TextureManager.hpp
-        src/Graphics/TextureManager.hpp
-        src/Graphics/Textures/MyTex.hpp
-        src/Graphics/TextureManager.cpp
+        src/Graphics/Textures/SharedState.hpp
+        src/Graphics/Textures/FlyweightTexture.hpp
+        src/Graphics/Textures/FlyweightTexture.cpp
+        src/Graphics/Textures/FactoryTexture.hpp
+        src/Graphics/Textures/FactoryTexture.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

@@ -17,17 +17,6 @@ MainWindow::MainWindow() {
 
 
 void MainWindow::Draw(std::vector<Ant> &ants){
-    window.setActive(false);
-
-    while (window.isOpen())
-    {
-        for (auto event = sf::Event{}; window.pollEvent(event);)
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
         window.clear(sf::Color::Cyan);
 
         for(Ant ant : ants)
@@ -36,6 +25,19 @@ void MainWindow::Draw(std::vector<Ant> &ants){
         }
 
         window.display();
+}
+
+bool MainWindow::SetActive(bool state) {
+    return window.setActive(state);
+}
+
+void MainWindow::ProcessEvents() {
+    for (auto event = sf::Event{}; window.pollEvent(event);)
+    {
+        if (event.type == sf::Event::Closed)
+        {
+            window.close();
+        }
     }
 }
 

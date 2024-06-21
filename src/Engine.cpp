@@ -9,7 +9,13 @@ Engine::Engine() {
 }
 
 void Engine::Loop() {
-    window.Draw(ants);
+    window.SetActive(false);
+
+    while(window.IsOpen())
+    {
+        window.ProcessEvents();
+        window.Draw(ants);
+    }
 }
 
 Engine::~Engine() = default;

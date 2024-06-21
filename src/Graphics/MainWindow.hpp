@@ -18,6 +18,9 @@ public:
     MainWindow();
     sf::RenderWindow & GetWindow(){ return window; }
     void Draw(std::vector<Ant> & ants);
+    bool SetActive(bool state);
+    bool IsOpen(){ return window.isOpen(); }
+    void ProcessEvents();
     //void DrawAntsThread(std::vector<Ant> & ants);
 };
 

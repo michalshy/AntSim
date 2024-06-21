@@ -1,7 +1,7 @@
-#include "Graphics/MainWindow.hpp"
+#include "Engine.hpp"
 
 int main()
 {
-    MainWindow window = MainWindow();
-    window.processEvents();
+    Engine eng = Engine();
+    eng.Loop();
 }

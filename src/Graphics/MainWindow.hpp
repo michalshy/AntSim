@@ -7,13 +7,13 @@
 
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
+#include "../Simulation/Entities/Ant.hpp"
 
 class MainWindow {
     sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
 public:
     MainWindow();
-
-    void processEvents();
+    void processEvents(std::vector<Ant> & ants);
 };
 
 

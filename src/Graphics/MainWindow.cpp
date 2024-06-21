@@ -8,7 +8,7 @@ MainWindow::MainWindow() {
     window.setFramerateLimit(144);
 }
 
-void MainWindow::processEvents() {
+void MainWindow::processEvents(std::vector<Ant> & ants) {
     while (window.isOpen())
     {
         for (auto event = sf::Event{}; window.pollEvent(event);)

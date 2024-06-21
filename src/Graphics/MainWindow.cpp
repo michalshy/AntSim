@@ -8,9 +8,15 @@ MainWindow::MainWindow() {
     window.setFramerateLimit(144);
 }
 
-void MainWindow::processEvents(std::vector<Ant> & ants) {
+//TODO: Implement
+//void MainWindow::DrawAntsThread(std::vector<Ant> &ants) {
+//    // launch the rendering thread
+//    sf::Thread thread(&DrawAnts, &ants);
+//    thread.launch();
+//}
 
-    // deactivate its OpenGL context
+
+void MainWindow::Draw(std::vector<Ant> &ants){
     window.setActive(false);
 
     while (window.isOpen())
@@ -24,22 +30,14 @@ void MainWindow::processEvents(std::vector<Ant> & ants) {
         }
         window.clear(sf::Color::Cyan);
 
-        DrawAnts(ants);
+        for(Ant ant : ants)
+        {
+            ant.drawAnt(this->window);
+        }
 
         window.display();
     }
 }
 
-void MainWindow::DrawAnts(std::vector<Ant> & ants) {
-    for(auto ant : ants)
-    {
-        ant.drawAnt(&window);
-    }
-}
 
-//TODO: Implement
-//void MainWindow::DrawAntsThread(std::vector<Ant> &ants) {
-//    // launch the rendering thread
-//    sf::Thread thread(&DrawAnts, &ants);
-//    thread.launch();
-//}
+

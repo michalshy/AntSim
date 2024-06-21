@@ -16,9 +16,8 @@ class MainWindow {
     sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
 public:
     MainWindow();
-    void processEvents(std::vector<Ant> & ants);
+    void Draw(std::vector<Ant> & ants);
     //void DrawAntsThread(std::vector<Ant> & ants);
-    void DrawAnts(std::vector<Ant> & ants);
 };
 
 

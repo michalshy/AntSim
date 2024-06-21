@@ -5,13 +5,10 @@
 #ifndef ANTSIMULATOR_ANTTEXTURE_HPP
 #define ANTSIMULATOR_ANTTEXTURE_HPP
 #include "SFML/Graphics.hpp"
+#include "MyTex.hpp"
 
-class AntTexture {
-    sf::Texture texture;
+class AntTexture : public MyTex{
 public:
     AntTexture();
-    sf::Texture getTex(){ return texture; }
 };
-
-
 #endif //ANTSIMULATOR_ANTTEXTURE_HPP

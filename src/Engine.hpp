@@ -7,11 +7,12 @@
 
 #include "Graphics/MainWindow.hpp"
 #include "Simulation/Entities/Ant.hpp"
+#include "Graphics/TextureManager.hpp"
 
 class Engine {
+    TextureManager tM;
     MainWindow window = MainWindow();
     std::vector<Ant> ants;
-
 public:
     Engine();
     void Loop();

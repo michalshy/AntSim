@@ -4,10 +4,10 @@
 
 #include "Ant.hpp"
 
-Ant::Ant() {
-    ant.setTexture(tex.getTex());
+Ant::Ant(TextureManager& texM) {
+    ant.setTexture(texM.getTex(TexCodes::ANT).getTex());
 }
 
-void Ant::drawAnt(sf::RenderWindow *window) {
-    window->draw(ant);
+void Ant::drawAnt(sf::RenderWindow & window) {
+    window.draw(ant);
 }

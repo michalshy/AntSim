@@ -20,6 +20,10 @@ add_executable(AntSimulator src/main.cpp
         src/Engine.cpp
         src/Graphics/Textures/AntTexture.hpp
         src/Graphics/Textures/AntTexture.cpp
+        src/Graphics/TextureManager.hpp
+        src/Graphics/TextureManager.hpp
+        src/Graphics/Textures/MyTex.hpp
+        src/Graphics/TextureManager.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

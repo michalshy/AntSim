@@ -6,13 +6,13 @@
 #define ANTSIMULATOR_ANT_HPP
 #include "SFML/Graphics.hpp"
 #include "../../Graphics/Textures/AntTexture.hpp"
+#include "../../Graphics/TextureManager.hpp"
 
 class Ant {
-    AntTexture tex = AntTexture();
     sf::Sprite ant;
 public:
-    Ant();
-    void drawAnt(sf::RenderWindow * window);
+    explicit Ant(TextureManager& texM);
+    void drawAnt(sf::RenderWindow & window);
 };
 
 

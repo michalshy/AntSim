@@ -5,7 +5,7 @@
 #include "AntTexture.hpp"
 
 AntTexture::AntTexture() {
-    if(!texture.loadFromFile("src/Graphics/Textures/Images/ant.png", sf::IntRect(10,10,32,32)))
+    if(!getTex().loadFromFile("src/Graphics/Textures/Images/ant.png", sf::IntRect(10,10,32,32)))
     {
         //TODO: ERROR HANDLING
     }

@@ -5,11 +5,11 @@
 #include "Engine.hpp"
 
 Engine::Engine() {
-
+    tM.addTexes();
     //TODO: Init ants
-    ants.emplace_back();
+    ants.emplace_back(tM);
 }
 
 void Engine::Loop() {
-    window.processEvents(ants);
+    window.Draw(ants);
 }

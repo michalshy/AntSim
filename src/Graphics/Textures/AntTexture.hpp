@@ -10,6 +10,7 @@ class AntTexture {
     sf::Texture texture;
 public:
     AntTexture();
+    sf::Texture getTex(){ return texture; }
 };
 
 

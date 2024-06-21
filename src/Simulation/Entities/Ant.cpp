@@ -3,3 +3,11 @@
 //
 
 #include "Ant.hpp"
+
+Ant::Ant() {
+    ant.setTexture(tex.getTex());
+}
+
+void Ant::drawAnt(sf::RenderWindow *window) {
+    window->draw(ant);
+}

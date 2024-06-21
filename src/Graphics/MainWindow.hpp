@@ -8,12 +8,17 @@
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 #include "../Simulation/Entities/Ant.hpp"
+#include <thread>
+#include <iostream>
+
 
 class MainWindow {
     sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
 public:
     MainWindow();
     void processEvents(std::vector<Ant> & ants);
+    //void DrawAntsThread(std::vector<Ant> & ants);
+    void DrawAnts(std::vector<Ant> & ants);
 };
 
 

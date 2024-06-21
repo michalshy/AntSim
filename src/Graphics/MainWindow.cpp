@@ -9,6 +9,10 @@ MainWindow::MainWindow() {
 }
 
 void MainWindow::processEvents(std::vector<Ant> & ants) {
+
+    // deactivate its OpenGL context
+    window.setActive(false);
+
     while (window.isOpen())
     {
         for (auto event = sf::Event{}; window.pollEvent(event);)
@@ -18,8 +22,24 @@ void MainWindow::processEvents(std::vector<Ant> & ants) {
                 window.close();
             }
         }
+        window.clear(sf::Color::Cyan);
 
-        window.clear();
+        DrawAnts(ants);
+
         window.display();
     }
 }
+
+void MainWindow::DrawAnts(std::vector<Ant> & ants) {
+    for(auto ant : ants)
+    {
+        ant.drawAnt(&window);
+    }
+}
+
+//TODO: Implement
+//void MainWindow::DrawAntsThread(std::vector<Ant> &ants) {
+//    // launch the rendering thread
+//    sf::Thread thread(&DrawAnts, &ants);
+//    thread.launch();
+//}

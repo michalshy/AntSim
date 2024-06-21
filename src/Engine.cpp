@@ -5,14 +5,11 @@
 #include "Engine.hpp"
 
 Engine::Engine() {
-    factory = new FactoryTexture({{"src/Graphics/Textures/Images/ant.png"}});
-    ants.emplace_back(factory);
+    ants.emplace_back(tM.getFromId(TexCodes::ANT));
 }
 
 void Engine::Loop() {
     window.Draw(ants);
 }
 
-Engine::~Engine() {
-    delete factory;
-}
+Engine::~Engine() = default;

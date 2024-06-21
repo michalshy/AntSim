@@ -5,13 +5,13 @@
 #ifndef ANTSIMULATOR_ANT_HPP
 #define ANTSIMULATOR_ANT_HPP
 #include "SFML/Graphics.hpp"
-#include "../../Graphics/Textures/FactoryTexture.hpp"
+#include "../../Graphics/Textures/TextureManager.hpp"
 
 
 class Ant {
     sf::Sprite ant;
 public:
-    Ant(FactoryTexture* fac);
+    Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);
 };
 

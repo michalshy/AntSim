@@ -4,8 +4,8 @@
 
 #include "Ant.hpp"
 
-Ant::Ant(FactoryTexture* fac) {
-    ant.setTexture(fac->GetFlyweight({"src/Graphics/Textures/Images/ant.png"}).retTex());
+Ant::Ant(sf::Texture * tex) {
+    ant.setTexture(*tex);
 }
 
 void Ant::drawAnt(sf::RenderWindow & window) {

@@ -4,6 +4,11 @@
 
 #include "Engine.hpp"
 
+void Engine::ThreadedDraw(Engine* eng)
+{
+    eng->window->Draw(*eng->ants);
+}
+
 Engine::Engine() {
     window = new MainWindow();
     tM = new TextureManager();
@@ -13,10 +18,12 @@ Engine::Engine() {
 void Engine::Loop() {
     window->SetActive(false);
 
+    sf::Thread drawThread(&(ThreadedDraw), this);
+    drawThread.launch();
+
     while(window->IsOpen())
     {
         window->ProcessEvents();
-        window->Draw(*ants);
     }
 }
 

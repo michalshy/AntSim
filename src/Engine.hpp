@@ -13,9 +13,12 @@ class Engine {
     TextureManager * tM;
     MainWindow * window;
     Anthill * ants;
+
+    static void ThreadedDraw(Engine* eng);
 public:
     Engine();
     void Loop();
+
 
     ~Engine();
 };

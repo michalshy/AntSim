@@ -13,7 +13,7 @@
 #include "../Simulation/Anthill.hpp"
 
 class MainWindow {
-    sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
+    sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };;
 public:
     MainWindow();
     sf::RenderWindow & GetWindow(){ return window; }
@@ -21,7 +21,6 @@ public:
     bool SetActive(bool state);
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();
-    //void DrawAntsThread(std::vector<Ant> & ants);
 };
 
 

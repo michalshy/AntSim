@@ -11,7 +11,7 @@
 class Ant {
     sf::Sprite ant;
 public:
-    Ant(sf::Texture* tex);
+    explicit Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);
 };
 

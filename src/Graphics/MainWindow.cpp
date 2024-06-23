@@ -16,10 +16,10 @@ MainWindow::MainWindow() {
 //}
 
 
-void MainWindow::Draw(std::vector<Ant> &ants){
+void MainWindow::Draw(Anthill & ants){
         window.clear(sf::Color::Cyan);
 
-        for(Ant ant : ants)
+        for(Ant ant : ants.GetAnts())
         {
             ant.drawAnt(this->window);
         }

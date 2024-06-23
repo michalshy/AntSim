@@ -6,13 +6,13 @@
 #define ANTSIMULATOR_ENGINE_HPP
 
 #include "Graphics/MainWindow.hpp"
-#include "Simulation/Entities/Ant.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
+#include "Simulation/Anthill.hpp"
 
 class Engine {
-    TextureManager tM;
-    MainWindow window = MainWindow();
-    std::vector<Ant> ants;
+    TextureManager * tM;
+    MainWindow * window;
+    Anthill * ants;
 public:
     Engine();
     void Loop();

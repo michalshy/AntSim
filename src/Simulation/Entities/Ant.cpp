@@ -5,7 +5,9 @@
 #include "Ant.hpp"
 
 Ant::Ant(sf::Texture * tex) {
+    ant.setScale(0.1,0.1);
     ant.setTexture(*tex);
+    ant.setPosition(1000,500);
 }
 
 void Ant::drawAnt(sf::RenderWindow & window) {

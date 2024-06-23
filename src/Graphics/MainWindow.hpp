@@ -10,14 +10,14 @@
 #include "../Simulation/Entities/Ant.hpp"
 #include <thread>
 #include <iostream>
-
+#include "../Simulation/Anthill.hpp"
 
 class MainWindow {
     sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
 public:
     MainWindow();
     sf::RenderWindow & GetWindow(){ return window; }
-    void Draw(std::vector<Ant> & ants);
+    void Draw(Anthill & ants);
     bool SetActive(bool state);
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();

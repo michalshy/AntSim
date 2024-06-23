@@ -5,17 +5,24 @@
 #include "Engine.hpp"
 
 Engine::Engine() {
-    ants.emplace_back(tM.getFromId(TexCodes::ANT));
+    window = new MainWindow();
+    tM = new TextureManager();
+    ants = new Anthill(tM->getFromId(TexCodes::ANT));
 }
 
 void Engine::Loop() {
-    window.SetActive(false);
+    window->SetActive(false);
 
-    while(window.IsOpen())
+    while(window->IsOpen())
     {
-        window.ProcessEvents();
-        window.Draw(ants);
+        window->ProcessEvents();
+        window->Draw(*ants);
     }
 }
 
-Engine::~Engine() = default;
+Engine::~Engine()
+{
+    delete window;
+    delete tM;
+    delete ants;
+}

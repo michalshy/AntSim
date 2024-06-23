@@ -13,6 +13,7 @@ class Ant {
 public:
     explicit Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);
+    void Behaviour();
 };
 
 

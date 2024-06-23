@@ -13,3 +13,8 @@ Ant::Ant(sf::Texture * tex) {
 void Ant::drawAnt(sf::RenderWindow & window) {
     window.draw(ant);
 }
+
+void Ant::Behaviour() {
+    ant.rotate(1);
+    ant.move(0.1,0.1);
+}

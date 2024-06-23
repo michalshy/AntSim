@@ -10,17 +10,19 @@
 #include "Simulation/Anthill.hpp"
 
 class Engine {
-    TextureManager * tM;
-    MainWindow * window;
-    Anthill * ants;
-
+    bool mThreadFlag = false;
     static void ThreadedDraw(Engine* eng);
 public:
     Engine();
     void Loop();
-
-
     ~Engine();
+
+    void SetFlag(bool s){ mThreadFlag = s; }
+    bool GetFlag() const{ return mThreadFlag; }
+protected:
+    TextureManager * tM;
+    MainWindow * window;
+    Anthill * ants;
 };
 
 

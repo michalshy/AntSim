@@ -6,7 +6,7 @@
 
 void Engine::ThreadedDraw(Engine* eng)
 {
-    eng->window->Draw(*eng->ants);
+    eng->ants->UpdateAnts();
 }
 
 Engine::Engine() {
@@ -18,12 +18,14 @@ Engine::Engine() {
 void Engine::Loop() {
     window->SetActive(false);
 
-    sf::Thread drawThread(&(ThreadedDraw), this);
-    drawThread.launch();
+    sf::Thread antThread(&(ThreadedDraw), this);
 
     while(window->IsOpen())
     {
+        antThread.launch();
+        window->Draw(*ants);
         window->ProcessEvents();
+        antThread.wait();
     }
 }
 

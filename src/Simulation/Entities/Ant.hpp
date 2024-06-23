@@ -7,9 +7,11 @@
 #include "SFML/Graphics.hpp"
 #include "../../Graphics/Textures/TextureManager.hpp"
 
+#define ANT_HEIGHT 200
+#define ANT_WIDTH 150
 
 class Ant {
-    sf::Sprite ant;
+    sf::RectangleShape ant;
 public:
     explicit Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);

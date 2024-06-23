@@ -5,9 +5,10 @@
 #include "Ant.hpp"
 
 Ant::Ant(sf::Texture * tex) {
-    ant.setScale(0.1,0.1);
-    ant.setTexture(*tex);
-    ant.setPosition(1000,500);
+    ant.setSize(sf::Vector2f(ANT_WIDTH, ANT_HEIGHT));
+    ant.setTexture(tex);
+    ant.setPosition(960,540); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
+    ant.setOrigin(sf::Vector2f((float(ANT_WIDTH)/2), (float(ANT_HEIGHT)/2)));
 }
 
 void Ant::drawAnt(sf::RenderWindow & window) {
@@ -16,5 +17,5 @@ void Ant::drawAnt(sf::RenderWindow & window) {
 
 void Ant::Behaviour() {
     ant.rotate(1);
-    ant.move(0.1,0.1);
+    //ant.move(0,0.1);
 }

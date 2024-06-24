@@ -10,18 +10,12 @@
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
 
-
-
 class Engine {
-    bool mThreadFlag = false;
     static void ThreadedDraw(Engine* eng);
 public:
     explicit Engine();
     void Loop();
     ~Engine();
-
-    void SetFlag(bool s){ mThreadFlag = s; }
-    bool GetFlag() const{ return mThreadFlag; }
 protected:
     TextureManager * tM;
     MainWindow * window;

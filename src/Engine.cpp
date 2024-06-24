@@ -17,7 +17,6 @@ Engine::Engine() {
 
 void Engine::Loop() {
     window->SetActive(false);
-
     sf::Thread antThread(&(ThreadedDraw), this);
     //Init timer
     Timer::Restart();
@@ -29,8 +28,6 @@ void Engine::Loop() {
         window->ProcessEvents();
         antThread.wait();
     }
-
-
 }
 
 Engine::~Engine()

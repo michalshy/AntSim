@@ -23,5 +23,4 @@ public:
     void ProcessEvents();
 };
 
-
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

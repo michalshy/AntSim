@@ -8,22 +8,12 @@ MainWindow::MainWindow() {
     window.setFramerateLimit(144);
 }
 
-//TODO: Implement
-//void MainWindow::DrawAntsThread(std::vector<Ant> &ants) {
-//    // launch the rendering thread
-//    sf::Thread thread(&DrawAnts, &ants);
-//    thread.launch();
-//}
-
-
 void MainWindow::Draw(Anthill & ants){
         window.clear(sf::Color::Cyan);
-
         for(Ant ant : ants.GetAnts())
         {
             ant.drawAnt(this->window);
         }
-
         window.display();
 }
 

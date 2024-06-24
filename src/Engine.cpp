@@ -19,13 +19,14 @@ void Engine::Loop() {
     window->SetActive(false);
 
     sf::Thread antThread(&(ThreadedDraw), this);
-
+    //Init timer
+    Timer::Restart();
     while(window->IsOpen())
     {
+        Timer::Restart();
         antThread.launch();
         window->Draw(*ants);
         window->ProcessEvents();
-        Timer::Restart();
         antThread.wait();
     }
 

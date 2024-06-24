@@ -13,5 +13,8 @@ void Anthill::UpdateAnts() {
 
 Anthill::Anthill(sf::Texture * _antTex) {
     antTex = _antTex;
-    ants.emplace_back(antTex);
+    for(int i = 0; i < 1; i++)
+    {
+        ants.emplace_back(antTex);
+    }
 }

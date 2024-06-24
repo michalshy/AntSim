@@ -1,9 +1,11 @@
 #include "Engine.hpp"
+#include "Logic/Timer.hpp"
+
+sf::Clock Timer::clk;
+double Timer::dt;
 
 int main()
 {
-    sf::Clock clk = sf::Clock();
-
-    Engine eng = Engine(clk);
+    Engine eng = Engine();
     eng.Loop();
 }

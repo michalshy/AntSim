@@ -22,6 +22,8 @@ add_executable(AntSimulator src/main.cpp
         src/Graphics/Textures/TextureManager.cpp
         src/Simulation/Anthill.hpp
         src/Simulation/Anthill.cpp
+        src/Logic/Timer.hpp
+        src/Logic/Timer.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

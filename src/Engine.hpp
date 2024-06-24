@@ -8,12 +8,15 @@
 #include "Graphics/MainWindow.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
+#include "Logic/Timer.hpp"
+
+
 
 class Engine {
     bool mThreadFlag = false;
     static void ThreadedDraw(Engine* eng);
 public:
-    explicit Engine(sf::Clock _clk);
+    explicit Engine();
     void Loop();
     ~Engine();
 
@@ -23,7 +26,6 @@ protected:
     TextureManager * tM;
     MainWindow * window;
     Anthill * ants;
-    sf::Clock * clk;
 };
 
 

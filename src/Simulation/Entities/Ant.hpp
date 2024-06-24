@@ -6,12 +6,14 @@
 #define ANTSIMULATOR_ANT_HPP
 #include "SFML/Graphics.hpp"
 #include "../../Graphics/Textures/TextureManager.hpp"
+#include "../../Logic/Timer.hpp"
 
 #define ANT_HEIGHT 200
 #define ANT_WIDTH 150
 
 class Ant {
-    float speed = 5.f;
+    const float speed = 1.f;
+    double dt;
 public:
     explicit Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);

@@ -9,8 +9,7 @@ void Engine::ThreadedDraw(Engine* eng)
     eng->ants->UpdateAnts();
 }
 
-Engine::Engine(sf::Clock _clk) {
-    clk = &_clk;
+Engine::Engine() {
     window = new MainWindow();
     tM = new TextureManager();
     ants = new Anthill(tM->getFromId(TexCodes::ANT));
@@ -26,8 +25,11 @@ void Engine::Loop() {
         antThread.launch();
         window->Draw(*ants);
         window->ProcessEvents();
+        Timer::Restart();
         antThread.wait();
     }
+
+
 }
 
 Engine::~Engine()

@@ -16,7 +16,7 @@ Ant::Ant(sf::Texture * tex) {
     ant.setOrigin(sf::Vector2f((float(ANT_WIDTH)/2), (float(ANT_HEIGHT)/2)));
 }
 
-void Ant::drawAnt(sf::RenderWindow & window) {
+void Ant::DrawAnt(sf::RenderWindow & window) {
     window.draw(ant);
 }
 

@@ -16,7 +16,7 @@ class Ant {
     double dt;
 public:
     explicit Ant(sf::Texture* tex);
-    void drawAnt(sf::RenderWindow & window);
+    void DrawAnt(sf::RenderWindow & window);
     void Behaviour();
 protected:
     sf::RectangleShape ant;

@@ -10,9 +10,9 @@ MainWindow::MainWindow() {
 
 void MainWindow::Draw(Anthill & ants){
         window.clear(sf::Color::Cyan);
-        for(Ant ant : ants.GetAnts())
+        for(Ant& ant : ants.GetAnts())
         {
-            ant.drawAnt(this->window);
+            ant.DrawAnt(this->window);
         }
         window.display();
 }

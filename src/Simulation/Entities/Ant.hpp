@@ -11,11 +11,13 @@
 #define ANT_WIDTH 150
 
 class Ant {
-    sf::RectangleShape ant;
+    float speed = 5.f;
 public:
     explicit Ant(sf::Texture* tex);
     void drawAnt(sf::RenderWindow & window);
     void Behaviour();
+protected:
+    sf::RectangleShape ant;
 };
 
 

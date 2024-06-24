@@ -13,7 +13,7 @@ class Engine {
     bool mThreadFlag = false;
     static void ThreadedDraw(Engine* eng);
 public:
-    Engine();
+    explicit Engine(sf::Clock _clk);
     void Loop();
     ~Engine();
 
@@ -23,6 +23,7 @@ protected:
     TextureManager * tM;
     MainWindow * window;
     Anthill * ants;
+    sf::Clock * clk;
 };
 
 

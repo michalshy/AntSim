@@ -24,6 +24,6 @@ void Ant::Behaviour() {
     vel.y = -1.f * cos((PI/180)*ant.getRotation()) * speed;
 
     ant.move(vel);
-    ant.rotate(1);
+    ant.rotate(-1);
 
 }

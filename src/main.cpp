@@ -2,6 +2,8 @@
 
 int main()
 {
-    Engine eng = Engine();
+    sf::Clock clk = sf::Clock();
+
+    Engine eng = Engine(clk);
     eng.Loop();
 }

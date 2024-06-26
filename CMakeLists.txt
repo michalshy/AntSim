@@ -26,6 +26,8 @@ add_executable(AntSimulator src/main.cpp
         src/Logic/Timer.cpp
         src/Graphics/Window.hpp
         src/Graphics/Window.cpp
+        src/Graphics/Windows/UiWindow.hpp
+        src/Graphics/Windows/UiWindow.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

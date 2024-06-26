@@ -10,21 +10,22 @@ void Engine::ThreadedDraw(Engine* eng)
 }
 
 Engine::Engine() {
-    window = new MainWindow();
+    mainWindow = new MainWindow();
+    uiWindow = new UIWindow();
     tM = new TextureManager();
     ants = new Anthill(tM->getFromId(TexCodes::ANT));
 }
 
 void Engine::Loop() {
-    window->SetActive(false);
+    mainWindow->SetActive(true);
     sf::Thread antThread(&(ThreadedDraw), this);
     //Init timer
     Timer::Init();
-    while(window->IsOpen())
+    while(mainWindow->IsOpen())
     {
         antThread.launch();
-        window->Draw(*ants);
-        window->ProcessEvents();
+        mainWindow->ProcessEvents();
+        mainWindow->Draw(*ants);
         antThread.wait();
         Timer::Restart();
     }
@@ -32,7 +33,8 @@ void Engine::Loop() {
 
 Engine::~Engine()
 {
-    delete window;
+    delete mainWindow;
     delete tM;
     delete ants;
+    delete uiWindow;
 }

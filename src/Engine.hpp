@@ -9,7 +9,7 @@
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
-
+#include "Graphics/Windows/UiWindow.hpp"
 class Engine {
     static void ThreadedDraw(Engine* eng);
 public:
@@ -18,7 +18,8 @@ public:
     ~Engine();
 protected:
     TextureManager * tM;
-    MainWindow * window;
+    MainWindow * mainWindow;
+    UIWindow * uiWindow;
     Anthill * ants;
 };
 

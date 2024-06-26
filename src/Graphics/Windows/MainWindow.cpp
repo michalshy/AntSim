@@ -4,32 +4,18 @@
 
 #include "MainWindow.hpp"
 
-MainWindow::MainWindow() {
-    window.setFramerateLimit(144);
-}
+MainWindow::MainWindow() = default;
 
 void MainWindow::Draw(Anthill & ants){
-        window.clear(sf::Color::Cyan);
+        GetWindow().clear(sf::Color::Cyan);
         for(Ant& ant : ants.GetAnts())
         {
-            ant.DrawAnt(this->window);
+            ant.DrawAnt(this->GetWindow());
         }
-        window.display();
+        GetWindow().display();
 }
 
-bool MainWindow::SetActive(bool state) {
-    return window.setActive(state);
-}
 
-void MainWindow::ProcessEvents() {
-    for (auto event = sf::Event{}; window.pollEvent(event);)
-    {
-        if (event.type == sf::Event::Closed)
-        {
-            window.close();
-        }
-    }
-}
 
 
 

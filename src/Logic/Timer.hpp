@@ -12,6 +12,7 @@ class Timer {
     static double dt;
 public:
     Timer();
+    static void Init();
     static sf::Time GetElapsed(){ return clk.getElapsedTime(); }
     static void Restart(){ dt = clk.restart().asMilliseconds(); }
     static double GetDt(){ return dt; }

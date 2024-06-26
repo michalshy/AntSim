@@ -7,10 +7,10 @@
 
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
-#include "../Simulation/Entities/Ant.hpp"
+#include "../../Simulation/Entities/Ant.hpp"
 #include <thread>
 #include <iostream>
-#include "../Simulation/Anthill.hpp"
+#include "../../Simulation/Anthill.hpp"
 
 class MainWindow {
     sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };;

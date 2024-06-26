@@ -4,6 +4,8 @@
 
 #include "Timer.hpp"
 
-Timer::Timer() {
+Timer::Timer() = default;
+
+void Timer::Init() {
     clk = sf::Clock();
 }

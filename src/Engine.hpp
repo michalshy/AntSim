@@ -5,7 +5,7 @@
 #ifndef ANTSIMULATOR_ENGINE_HPP
 #define ANTSIMULATOR_ENGINE_HPP
 
-#include "Graphics/MainWindow.hpp"
+#include "Graphics/Windows/MainWindow.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"

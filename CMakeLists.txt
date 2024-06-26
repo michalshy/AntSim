@@ -14,8 +14,8 @@ FetchContent_MakeAvailable(SFML)
 add_executable(AntSimulator src/main.cpp
         src/Simulation/Entities/Ant.hpp
         src/Simulation/Entities/Ant.cpp
-        src/Graphics/MainWindow.hpp
-        src/Graphics/MainWindow.cpp
+        src/Graphics/Windows/MainWindow.hpp
+        src/Graphics/Windows/MainWindow.cpp
         src/Engine.hpp
         src/Engine.cpp
         src/Graphics/Textures/TextureManager.hpp
@@ -24,6 +24,8 @@ add_executable(AntSimulator src/main.cpp
         src/Simulation/Anthill.cpp
         src/Logic/Timer.hpp
         src/Logic/Timer.cpp
+        src/Graphics/Window.hpp
+        src/Graphics/Window.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

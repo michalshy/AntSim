@@ -5,11 +5,10 @@
 #ifndef ANTSIMULATOR_ENGINE_HPP
 #define ANTSIMULATOR_ENGINE_HPP
 
-#include "Graphics/Windows/MainWindow.hpp"
+#include "Graphics/MainWindow.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
-#include "Graphics/Windows/UiWindow.hpp"
 class Engine {
     static void ThreadedDraw(Engine* eng);
 public:
@@ -19,7 +18,6 @@ public:
 protected:
     TextureManager * tM;
     MainWindow * mainWindow;
-    UIWindow * uiWindow;
     Anthill * ants;
 };
 

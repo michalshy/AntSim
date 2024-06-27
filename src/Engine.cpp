@@ -11,7 +11,6 @@ void Engine::ThreadedDraw(Engine* eng)
 
 Engine::Engine() {
     mainWindow = new MainWindow();
-    uiWindow = new UIWindow();
     tM = new TextureManager();
     ants = new Anthill(tM->getFromId(TexCodes::ANT));
 }
@@ -36,5 +35,4 @@ Engine::~Engine()
     delete mainWindow;
     delete tM;
     delete ants;
-    delete uiWindow;
 }

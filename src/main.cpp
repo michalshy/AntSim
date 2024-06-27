@@ -2,7 +2,8 @@
 #include "Logic/Timer.hpp"
 
 sf::Clock Timer::clk;
-double Timer::dt;
+sf::Time Timer::dt;
+sf::Time Timer::timePerFrame;
 
 int main()
 {

@@ -29,6 +29,9 @@ void MainWindow::ProcessEvents() {
         {
             window.close();
         }
+        if(event.type == sf::Event::Resized)
+        {
+        }
     }
 }
 

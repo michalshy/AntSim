@@ -9,7 +9,7 @@
 #define PI 3.14
 
 Ant::Ant(sf::Texture * tex) {
-    dt = Timer::GetDt();
+    dt = Timer::GetDt().asMilliseconds();
     ant.setSize(sf::Vector2f(ANT_WIDTH, ANT_HEIGHT));
     ant.setTexture(tex);
     ant.setPosition(960,540); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
@@ -21,7 +21,7 @@ void Ant::DrawAnt(sf::RenderWindow & window) {
 }
 
 void Ant::Behaviour() {
-    dt = Timer::GetDt();
+    dt = Timer::GetDt().asMilliseconds();
     sf::Vector2f vel;
     vel.x = sin((PI/180)*ant.getRotation()) * speed * dt;
     vel.y = -1.f * cos((PI/180)*ant.getRotation()) * speed * dt;

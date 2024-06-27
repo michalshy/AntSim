@@ -16,17 +16,20 @@ Engine::Engine() {
 }
 
 void Engine::Loop() {
-    mainWindow->SetActive(true);
-    sf::Thread antThread(&(ThreadedDraw), this);
     //Init timer
     Timer::Init();
+    float delta;
+    mainWindow->SetActive(true);
+    //Ready thread
+    sf::Thread antThread(&(ThreadedDraw), this);
     while(mainWindow->IsOpen())
     {
-        antThread.launch();
-        mainWindow->ProcessEvents();
-        mainWindow->Draw(*ants);
-        antThread.wait();
         Timer::Restart();
+        //antThread.launch();
+        ants->UpdateAnts();
+        mainWindow->Draw(*ants);
+        //antThread.wait();
+        mainWindow->ProcessEvents();
     }
 }
 

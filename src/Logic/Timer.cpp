@@ -8,4 +8,5 @@ Timer::Timer() = default;
 
 void Timer::Init() {
     clk = sf::Clock();
+    timePerFrame = sf::seconds(1.f/144.f);
 }

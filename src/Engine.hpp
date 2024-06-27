@@ -9,6 +9,7 @@
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
+#include "SFML/System.hpp"
 class Engine {
     static void ThreadedDraw(Engine* eng);
 public:

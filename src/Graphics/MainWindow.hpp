@@ -8,7 +8,7 @@
 #include "../Simulation/Anthill.hpp"
 
 class MainWindow{
-    sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator" };
+    sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator", sf::Style::Titlebar | sf::Style::Close};
 public:
     MainWindow();
     void Draw(Anthill & ants);

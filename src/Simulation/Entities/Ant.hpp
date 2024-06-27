@@ -8,11 +8,11 @@
 #include "../../Graphics/Textures/TextureManager.hpp"
 #include "../../Logic/Timer.hpp"
 
-#define ANT_HEIGHT 200
-#define ANT_WIDTH 150
+#define ANT_HEIGHT 20
+#define ANT_WIDTH 15
 
 class Ant {
-    const float speed = 1.f;
+    const float speed = 0.5f;
     double dt;
 public:
     explicit Ant(sf::Texture* tex);

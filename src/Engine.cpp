@@ -29,6 +29,7 @@ void Engine::Loop() {
         ants->UpdateAnts();
         mainWindow->Draw(*ants);
         //antThread.wait();
+        mainWindow->SetViewOnAnts();
         mainWindow->ProcessEvents();
     }
 }

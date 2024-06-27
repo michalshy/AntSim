@@ -25,6 +25,10 @@ add_executable(AntSimulator src/main.cpp
         src/Logic/Timer.hpp
         src/Logic/Timer.cpp
         src/Graphics/MainWindow.cpp
+        src/Graphics/Views/UiView.hpp
+        src/Graphics/Views/UiView.cpp
+        src/Graphics/Views/AntView.hpp
+        src/Graphics/Views/AntView.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

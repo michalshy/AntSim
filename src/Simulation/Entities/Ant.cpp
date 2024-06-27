@@ -12,7 +12,7 @@ Ant::Ant(sf::Texture * tex) {
     dt = Timer::GetDt().asMilliseconds();
     ant.setSize(sf::Vector2f(ANT_WIDTH, ANT_HEIGHT));
     ant.setTexture(tex);
-    ant.setPosition(960,540); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
+    ant.setPosition(800,400); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
     ant.setOrigin(sf::Vector2f((float(ANT_WIDTH)/2), (float(ANT_HEIGHT)/2)));
 }
 

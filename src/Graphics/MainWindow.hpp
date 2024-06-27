@@ -6,9 +6,13 @@
 #define ANTSIMULATOR_MAINWINDOW_HPP
 
 #include "../Simulation/Anthill.hpp"
+#include "Views/AntView.hpp"
+#include "Views/UiView.hpp"
+
 
 class MainWindow{
-    sf::RenderWindow window = sf::RenderWindow{ { 1920u, 1080u }, "AntSimulator", sf::Style::Titlebar | sf::Style::Close};
+    sf::RenderWindow window = sf::RenderWindow{ { 1600u, 800u }, "AntSimulator", sf::Style::Titlebar | sf::Style::Close};
+    AntView antV;
 public:
     MainWindow();
     void Draw(Anthill & ants);
@@ -16,6 +20,7 @@ public:
     bool SetActive(bool state);
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();
+    void SetViewOnAnts();
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

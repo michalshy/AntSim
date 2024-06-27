@@ -7,6 +7,7 @@
 MainWindow::MainWindow()
 {
     window.setFramerateLimit(144);
+    antV = AntView();
 }
 
 void MainWindow::Draw(Anthill & ants){
@@ -33,6 +34,10 @@ void MainWindow::ProcessEvents() {
         {
         }
     }
+}
+
+void MainWindow::SetViewOnAnts() {
+    window.setView(antV.ReturnView());
 }
 
 

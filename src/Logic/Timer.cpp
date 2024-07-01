@@ -8,5 +8,12 @@ Timer::Timer() = default;
 
 void Timer::Init() {
     clk = sf::Clock();
-    timePerFrame = sf::seconds(1.f/144.f);
+}
+
+void Timer::CheckTimestep() {
+    Timer::Restart();
+    if(dt > sf::seconds(0.1))
+    {
+        dt = sf::Time::Zero;
+    }
 }

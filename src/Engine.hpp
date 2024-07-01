@@ -11,7 +11,7 @@
 #include "Logic/Timer.hpp"
 #include "SFML/System.hpp"
 class Engine {
-    static void ThreadedDraw(Engine* eng);
+    static void ThreadedAnts(Engine* eng);
 public:
     explicit Engine();
     void Loop();

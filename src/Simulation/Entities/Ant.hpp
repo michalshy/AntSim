@@ -8,8 +8,8 @@
 #include "../../Graphics/Textures/TextureManager.hpp"
 #include "../../Logic/Timer.hpp"
 
-#define ANT_HEIGHT 20
-#define ANT_WIDTH 15
+constexpr int ANT_HEIGHT = 20;
+constexpr int ANT_WIDTH = 15;
 
 class Ant {
     const float speed = 0.5f;

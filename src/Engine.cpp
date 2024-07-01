@@ -4,7 +4,7 @@
 
 #include "Engine.hpp"
 
-void Engine::ThreadedDraw(Engine* eng)
+void Engine::ThreadedAnts(Engine* eng)
 {
     eng->ants->UpdateAnts();
 }
@@ -18,18 +18,22 @@ Engine::Engine() {
 void Engine::Loop() {
     //Init timer
     Timer::Init();
-    float delta;
     mainWindow->SetActive(true);
     //Ready thread
-    sf::Thread antThread(&(ThreadedDraw), this);
+    sf::Thread antThread(&(ThreadedAnts), this);
     while(mainWindow->IsOpen())
     {
-        Timer::Restart();
-        //antThread.launch();
-        ants->UpdateAnts();
+        //determine timestep TODO: WRITE APPROPRIATE HANDLER
+        Timer::CheckTimestep();
+        //start thread
+        antThread.launch();
+        //draw
         mainWindow->Draw(*ants);
-        //antThread.wait();
+        //drawing and updating in parallel
+        antThread.wait();
+        //set view
         mainWindow->SetViewOnAnts();
+        //check for events
         mainWindow->ProcessEvents();
     }
 }

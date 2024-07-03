@@ -21,6 +21,7 @@ public:
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();
     void SetViewOnAnts();
+    void MoveRelativeToMouse();
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

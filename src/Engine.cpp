@@ -35,6 +35,12 @@ void Engine::Loop() {
         mainWindow->SetViewOnAnts();
         //check for events
         mainWindow->ProcessEvents();
+        //input managing
+        if(sf::Mouse::isButtonPressed((sf::Mouse::Middle)))
+        {
+            mainWindow->MoveRelativeToMouse();
+            mainWindow->SetViewOnAnts();
+        }
     }
 }
 

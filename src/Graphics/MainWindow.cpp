@@ -40,6 +40,10 @@ void MainWindow::SetViewOnAnts() {
     window.setView(antV.ReturnView());
 }
 
+void MainWindow::MoveRelativeToMouse() {
+    antV.UpdatePos();
+}
+
 
 
 

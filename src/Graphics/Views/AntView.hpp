@@ -12,6 +12,7 @@ class AntView {
 public:
     AntView();
     sf::View& ReturnView(){ return antV; }
+    void UpdatePos();
 };
 
 

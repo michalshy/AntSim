@@ -8,6 +8,8 @@ MainWindow::MainWindow()
 {
     window.setFramerateLimit(144);
     antV = AntView();
+    dragging = false;
+    mousePos = sf::Mouse::getPosition();
 }
 
 void MainWindow::Draw(Anthill & ants){
@@ -40,6 +42,14 @@ void MainWindow::ProcessEvents() {
             else if (event.mouseWheelScroll.delta < 0)
                 ZoomViewAt({ event.mouseWheelScroll.x, event.mouseWheelScroll.y }, 1.3);
         }
+        if(dragging)
+        {
+            if(event.type == sf::Event::MouseMoved)
+            {
+                MoveRelativeToMouse();
+            }
+        }
+        
     }
 }
 
@@ -47,8 +57,16 @@ void MainWindow::SetViewOnAnts() {
     window.setView(antV.ReturnView());
 }
 
-void MainWindow::MoveRelativeToMouse() {
-    
+void MainWindow::InputManaging() {
+        if(sf::Mouse::isButtonPressed((sf::Mouse::Middle)))
+        {
+            mousePos = sf::Mouse::getPosition();
+            dragging = true;
+        }
+        else
+        {
+            dragging = false;
+        }
 }
 
 void MainWindow :: ZoomViewAt(sf::Vector2i pixel, float zoom)
@@ -59,6 +77,14 @@ void MainWindow :: ZoomViewAt(sf::Vector2i pixel, float zoom)
 	const sf::Vector2f offsetCoords{ beforeCoord - afterCoord };
 	antV.ReturnView().move(offsetCoords);
 	window.setView(antV.ReturnView());
+}
+
+void MainWindow::MoveRelativeToMouse()
+{
+    sf::Vector2i nextPos = sf::Mouse::getPosition();
+    const sf::Vector2f offsetCoords{ nextPos - mousePos };
+    antV.ReturnView().move(offsetCoords);
+    window.setView(antV.ReturnView());
 }
 
 

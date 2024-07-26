@@ -13,6 +13,8 @@
 class MainWindow{
     sf::RenderWindow window = sf::RenderWindow{ { 1600u, 800u }, "AntSimulator"};
     AntView antV;
+    bool dragging;
+    sf::Vector2i mousePos;
 public:
     MainWindow();
     void Draw(Anthill & ants);
@@ -21,8 +23,9 @@ public:
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();
     void SetViewOnAnts();
-    void MoveRelativeToMouse();
+    void InputManaging();
     void ZoomViewAt(sf::Vector2i pixel, float zoom);
+    void MoveRelativeToMouse();
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

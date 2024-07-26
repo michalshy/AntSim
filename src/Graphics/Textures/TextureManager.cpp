@@ -6,7 +6,7 @@
 
 TextureManager::TextureManager() {
     auto* ant = new sf::Texture;
-    ant->loadFromFile("src/Graphics/Textures/Images/ant.png");
+    ant->loadFromFile("../src/Graphics/Textures/Images/ant.png");
     texes.push_back(ant);
 }
 

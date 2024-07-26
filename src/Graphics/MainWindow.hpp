@@ -11,7 +11,7 @@
 
 
 class MainWindow{
-    sf::RenderWindow window = sf::RenderWindow{ { 1600u, 800u }, "AntSimulator", sf::Style::Titlebar | sf::Style::Close};
+    sf::RenderWindow window = sf::RenderWindow{ { 1600u, 800u }, "AntSimulator"};
     AntView antV;
 public:
     MainWindow();
@@ -22,6 +22,7 @@ public:
     void ProcessEvents();
     void SetViewOnAnts();
     void MoveRelativeToMouse();
+    void ZoomViewAt(sf::Vector2i pixel, float zoom);
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

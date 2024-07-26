@@ -33,6 +33,13 @@ void MainWindow::ProcessEvents() {
         if(event.type == sf::Event::Resized)
         {
         }
+        if (event.type == sf::Event::MouseWheelScrolled)
+        {
+            if (event.mouseWheelScroll.delta > 0)
+                ZoomViewAt({ event.mouseWheelScroll.x, event.mouseWheelScroll.y }, (1.f / 1.3));
+            else if (event.mouseWheelScroll.delta < 0)
+                ZoomViewAt({ event.mouseWheelScroll.x, event.mouseWheelScroll.y }, 1.3);
+        }
     }
 }
 
@@ -41,7 +48,17 @@ void MainWindow::SetViewOnAnts() {
 }
 
 void MainWindow::MoveRelativeToMouse() {
-    antV.UpdatePos();
+    
+}
+
+void MainWindow :: ZoomViewAt(sf::Vector2i pixel, float zoom)
+{
+	const sf::Vector2f beforeCoord{ window.mapPixelToCoords(pixel) };
+	antV.ReturnView().zoom(zoom);
+	const sf::Vector2f afterCoord{ window.mapPixelToCoords(pixel) };
+	const sf::Vector2f offsetCoords{ beforeCoord - afterCoord };
+	antV.ReturnView().move(offsetCoords);
+	window.setView(antV.ReturnView());
 }
 
 

@@ -83,7 +83,7 @@ void MainWindow :: ZoomViewAt(sf::Vector2i pixel, float zoom)
 void MainWindow::MoveRelativeToMouse()
 {
     sf::Vector2i nextPos = sf::Mouse::getPosition();
-    const sf::Vector2f offsetCoords{ nextPos - mousePos };
+    const sf::Vector2f offsetCoords{ mousePos - nextPos };
     antV.ReturnView().move(offsetCoords);
     window.setView(antV.ReturnView());
 }
@@ -91,6 +91,7 @@ void MainWindow::MoveRelativeToMouse()
 void MainWindow::AdjustOnResize()
 {
     float ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
+    antV.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
 }
 
 

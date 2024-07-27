@@ -12,7 +12,7 @@ void Timer::Init() {
 
 void Timer::CheckTimestep() {
     Timer::Restart();
-    if(dt > sf::seconds(0.3))
+    if(dt > sf::seconds(TimeConsts::STEP))
     {
         dt = sf::Time::Zero;
     }

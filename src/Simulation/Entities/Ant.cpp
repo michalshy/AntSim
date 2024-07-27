@@ -9,10 +9,10 @@
 
 Ant::Ant(sf::Texture * tex) {
     dt = Timer::GetDt().asMilliseconds();
-    ant.setSize(sf::Vector2f(AntConsts::ANT_WIDTH, AntConsts::ANT_HEIGHT));
+    ant.setSize(sf::Vector2f(AntConsts::WIDTH, AntConsts::HEIGHT));
     ant.setTexture(tex);
     ant.setPosition(0,0); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
-    ant.setOrigin(sf::Vector2f((float(AntConsts::ANT_WIDTH)/2), (float(AntConsts::ANT_HEIGHT)/2)));
+    ant.setOrigin(sf::Vector2f((float(AntConsts::WIDTH)/2), (float(AntConsts::HEIGHT)/2)));
 }
 
 void Ant::DrawAnt(sf::RenderWindow & window) {

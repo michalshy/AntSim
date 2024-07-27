@@ -6,6 +6,7 @@
 #define ANTSIMULATOR_TIMER_HPP
 
 #include "SFML/System.hpp"
+#include "../Globals.hpp"
 
 class Timer {
     static sf::Clock clk;

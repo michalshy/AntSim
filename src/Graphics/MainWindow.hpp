@@ -11,7 +11,7 @@
 #include "../Globals.hpp"
 
 class MainWindow{
-    sf::RenderWindow window = sf::RenderWindow{ { WindowParams::width, WindowParams::height }, "AntSimulator"};
+    sf::RenderWindow window = sf::RenderWindow{ { WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator"};
     AntView antV;
     bool dragging;
     sf::Vector2i mousePos;

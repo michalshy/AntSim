@@ -6,6 +6,7 @@
 #define ANTSIMULATOR_ANTHILL_HPP
 
 #include "Entities/Ant.hpp"
+#include "../Globals.hpp"
 
 class Anthill {
     std::vector<Ant> ants;

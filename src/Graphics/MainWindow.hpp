@@ -8,10 +8,10 @@
 #include "../Simulation/Anthill.hpp"
 #include "Views/AntView.hpp"
 #include "Views/UiView.hpp"
-
+#include "../Globals.hpp"
 
 class MainWindow{
-    sf::RenderWindow window = sf::RenderWindow{ { 1600u, 800u }, "AntSimulator"};
+    sf::RenderWindow window = sf::RenderWindow{ { WindowParams::width, WindowParams::height }, "AntSimulator"};
     AntView antV;
     bool dragging;
     sf::Vector2i mousePos;
@@ -26,6 +26,7 @@ public:
     void InputManaging();
     void ZoomViewAt(sf::Vector2i pixel, float zoom);
     void MoveRelativeToMouse();
+    void AdjustOnResize();
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

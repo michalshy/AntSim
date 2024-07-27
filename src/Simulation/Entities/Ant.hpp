@@ -7,9 +7,7 @@
 #include "SFML/Graphics.hpp"
 #include "../../Graphics/Textures/TextureManager.hpp"
 #include "../../Logic/Timer.hpp"
-
-constexpr int ANT_HEIGHT = 20;
-constexpr int ANT_WIDTH = 15;
+#include "../../Globals.hpp"
 
 class Ant {
     const float speed = 0.5f;

@@ -34,6 +34,7 @@ void MainWindow::ProcessEvents() {
         }
         if(event.type == sf::Event::Resized)
         {
+            AdjustOnResize();
         }
         if (event.type == sf::Event::MouseWheelScrolled)
         {
@@ -85,6 +86,11 @@ void MainWindow::MoveRelativeToMouse()
     const sf::Vector2f offsetCoords{ nextPos - mousePos };
     antV.ReturnView().move(offsetCoords);
     window.setView(antV.ReturnView());
+}
+
+void MainWindow::AdjustOnResize()
+{
+    float ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
 }
 
 

@@ -4,16 +4,26 @@
 
 #include "MainWindow.hpp"
 
-MainWindow::MainWindow()
+MainWindow::MainWindow(sf::Texture * _backgroundTex)
 {
     window.setFramerateLimit(144);
     antV = AntView();
     dragging = false;
     mousePos = sf::Mouse::getPosition();
+
+    //Background section
+    fBounds = sf::FloatRect(-25000.f, -15000.f, 50000.f, 30000.f);
+    iBounds = sf::IntRect(fBounds);
+    background = sf::Sprite((* _backgroundTex), iBounds);
+    background.setPosition(fBounds.left, fBounds.top - 1000.f + antV.ReturnView().getSize().y);
+    viewOffsetY = 0;
+    spriteOffsetY = 0;
+    textureHeight = _backgroundTex->getSize().y;
 }
 
 void MainWindow::Draw(Anthill & ants){
-        GetWindow().clear(sf::Color::Cyan);
+        GetWindow().clear(sf::Color(150, 75, 0, 255));
+        window.draw(background);
         for(Ant& ant : ants.GetAnts())
         {
             ant.DrawAnt(this->GetWindow());
@@ -56,6 +66,7 @@ void MainWindow::ProcessEvents() {
 
 void MainWindow::SetViewOnAnts() {
     window.setView(antV.ReturnView());
+    
 }
 
 void MainWindow::InputManaging() {

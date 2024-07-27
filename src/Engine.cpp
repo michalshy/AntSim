@@ -3,6 +3,7 @@
 //
 
 #include "Engine.hpp"
+#include <iostream>
 
 void Engine::ThreadedAnts(Engine* eng)
 {
@@ -10,8 +11,8 @@ void Engine::ThreadedAnts(Engine* eng)
 }
 
 Engine::Engine() {
-    mainWindow = new MainWindow();
     tM = new TextureManager();
+    mainWindow = new MainWindow(tM->getFromId(TexCodes::BACKGROUND));
     ants = new Anthill(tM->getFromId(TexCodes::ANT));
 }
 
@@ -27,16 +28,17 @@ void Engine::Loop() {
         Timer::CheckTimestep();
         //start thread
         antThread.launch();
-        //draw
-        mainWindow->Draw(*ants);
-        //drawing and updating in parallel
-        antThread.wait();
         //set view
         mainWindow->SetViewOnAnts();
         //check for events
         mainWindow->ProcessEvents();
         //input managing
         mainWindow->InputManaging();
+        //draw
+        mainWindow->Draw(*ants);
+        //drawing and updating in parallel
+        antThread.wait();
+        
     }
 }
 

@@ -8,15 +8,25 @@
 #include "../Simulation/Anthill.hpp"
 #include "Views/AntView.hpp"
 #include "Views/UiView.hpp"
+#include "SFML/Graphics.hpp"
 #include "../Globals.hpp"
+#include <cmath>
 
 class MainWindow{
     sf::RenderWindow window = sf::RenderWindow{ { WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator"};
     AntView antV;
     bool dragging;
     sf::Vector2i mousePos;
+
+    //For background
+    sf::FloatRect fBounds;
+    sf::IntRect iBounds;
+    sf::Sprite background;
+    float viewOffsetY;
+    float spriteOffsetY;
+    u32 textureHeight;
 public:
-    MainWindow();
+    MainWindow(sf::Texture * _backgroundTex);
     void Draw(Anthill & ants);
     sf::RenderWindow &GetWindow(){ return window; }
     bool SetActive(bool state);

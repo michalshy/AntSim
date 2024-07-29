@@ -19,6 +19,9 @@ MainWindow::MainWindow(sf::Texture * _backgroundTex)
     viewOffsetY = 0;
     spriteOffsetY = 0;
     textureHeight = _backgroundTex->getSize().y;
+
+    //UiView
+    uiView = UiView();
 }
 
 void MainWindow::Draw(Anthill & ants){
@@ -28,6 +31,13 @@ void MainWindow::Draw(Anthill & ants){
         {
             ant.DrawAnt(this->GetWindow());
         }
+
+        GetWindow().setView(uiView.ReturnView());
+        //DRAWING UI HERE
+
+
+        GetWindow().setView(antV.ReturnView());
+
         GetWindow().display();
 }
 
@@ -65,8 +75,7 @@ void MainWindow::ProcessEvents() {
 }
 
 void MainWindow::SetViewOnAnts() {
-    window.setView(antV.ReturnView());
-    
+    window.setView(antV.ReturnView()); 
 }
 
 void MainWindow::InputManaging() {

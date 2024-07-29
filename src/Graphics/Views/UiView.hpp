@@ -5,9 +5,13 @@
 #ifndef ANTSIMULATOR_UIVIEW_HPP
 #define ANTSIMULATOR_UIVIEW_HPP
 
+#include "SFML/Graphics.hpp"
 
 class UiView {
-
+    sf::View uiView;
+public:
+    UiView();
+    sf::View ReturnView(){ return uiView; }
 };
 
 

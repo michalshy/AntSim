@@ -32,6 +32,10 @@ add_executable(AntSimulator src/main.cpp
         src/Globals.hpp
         src/Logic/Managers/InputManager.hpp
         src/Logic/Managers/InputManager.cpp
+        src/Simulation/Environment/Wall.hpp
+        src/Simulation/Environment/Walls.hpp
+        src/Simulation/Environment/Wall.cpp
+        src/Simulation/Environment/Walls.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

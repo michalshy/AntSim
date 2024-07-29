@@ -13,7 +13,10 @@
 #include <cmath>
 
 class MainWindow{
+    //Window section
     sf::RenderWindow window = sf::RenderWindow{ { WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator"};
+
+    //AntView
     AntView antV;
     bool dragging;
     sf::Vector2i mousePos;
@@ -25,6 +28,9 @@ class MainWindow{
     float viewOffsetY;
     float spriteOffsetY;
     u32 textureHeight;
+
+    //UiView
+    UiView uiView;
 public:
     MainWindow(sf::Texture * _backgroundTex);
     void Draw(Anthill & ants);

@@ -10,6 +10,8 @@
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
 #include "SFML/System.hpp"
+#include "Logic/Managers/InputManager.hpp"
+
 class Engine {
     static void ThreadedAnts(Engine* eng);
 public:
@@ -20,6 +22,7 @@ protected:
     TextureManager * tM;
     MainWindow * mainWindow;
     Anthill * ants;
+    InputManager * inputManager;
 };
 
 

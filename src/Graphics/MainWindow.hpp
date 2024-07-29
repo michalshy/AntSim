@@ -37,6 +37,8 @@ public:
     void ZoomViewAt(sf::Vector2i pixel, float zoom);
     void MoveRelativeToMouse();
     void AdjustOnResize();
+    void SetMousePos(sf::Vector2i mousePosProc);
+    void SetDragging(bool state);
 };
 
 #endif //ANTSIMULATOR_MAINWINDOW_HPP

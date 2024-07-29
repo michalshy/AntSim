@@ -11,6 +11,7 @@ void Engine::ThreadedAnts(Engine* eng)
 }
 
 Engine::Engine() {
+    inputManager = new InputManager();
     tM = new TextureManager();
     mainWindow = new MainWindow(tM->getFromId(TexCodes::BACKGROUND));
     ants = new Anthill(tM->getFromId(TexCodes::ANT));
@@ -33,7 +34,7 @@ void Engine::Loop() {
         //check for events
         mainWindow->ProcessEvents();
         //input managing
-        mainWindow->InputManaging();
+        inputManager->CheckInputs(*mainWindow);
         //draw
         mainWindow->Draw(*ants);
         //drawing and updating in parallel
@@ -45,6 +46,7 @@ void Engine::Loop() {
 Engine::~Engine()
 {
     delete mainWindow;
-    delete tM;
     delete ants;
+    delete tM;
+    delete inputManager;
 }

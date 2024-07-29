@@ -30,6 +30,8 @@ add_executable(AntSimulator src/main.cpp
         src/Graphics/Views/AntView.hpp
         src/Graphics/Views/AntView.cpp
         src/Globals.hpp
+        src/Logic/Managers/InputManager.hpp
+        src/Logic/Managers/InputManager.cpp
 )
 
 target_link_libraries(AntSimulator PRIVATE sfml-graphics)

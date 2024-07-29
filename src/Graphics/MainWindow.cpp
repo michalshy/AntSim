@@ -105,7 +105,12 @@ void MainWindow::AdjustOnResize()
     antV.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
 }
 
+void MainWindow::SetMousePos(sf::Vector2i mousePosProc)
+{
+    mousePos = mousePosProc;
+}
 
-
-
-
+void MainWindow::SetDragging(bool state)
+{
+    dragging = state;
+}

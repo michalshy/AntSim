@@ -7,6 +7,8 @@ sf::Time Timer::dt;
 // Demonstrate some basic assertions.
 TEST(TimerTest, BasicComparation) {
       Timer::Restart();
-      int dt = Timer::GetDt().asSeconds();
-      EXPECT_LE(dt, 1);
+      int dtSec = Timer::GetDt().asSeconds();
+      EXPECT_LE(dtSec, 1);
+      int dtMicro = Timer::GetDt().asMicroseconds();
+      EXPECT_GE(dtMicro, 1);
 }

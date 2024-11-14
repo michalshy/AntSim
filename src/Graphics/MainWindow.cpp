@@ -4,7 +4,7 @@
 
 #include "MainWindow.hpp"
 
-MainWindow::MainWindow(sf::Texture * _backgroundTex)
+MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
 {
     window.setFramerateLimit(144);
     antV = AntView();

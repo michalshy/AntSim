@@ -5,6 +5,7 @@
 #ifndef ANTSIMULATOR_MAINWINDOW_HPP
 #define ANTSIMULATOR_MAINWINDOW_HPP
 
+#include <memory>
 #include "../Simulation/Anthill.hpp"
 #include "Views/AntView.hpp"
 #include "Views/UiView.hpp"
@@ -32,7 +33,7 @@ class MainWindow{
     //UiView
     UiView uiView;
 public:
-    MainWindow(sf::Texture * _backgroundTex);
+    MainWindow(std::shared_ptr<sf::Texture> _backgroundTex);
     void Draw(Anthill & ants);
     sf::RenderWindow &GetWindow(){ return window; }
     bool SetActive(bool state);

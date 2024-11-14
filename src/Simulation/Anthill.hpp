@@ -5,16 +5,17 @@
 #ifndef ANTSIMULATOR_ANTHILL_HPP
 #define ANTSIMULATOR_ANTHILL_HPP
 
+#include <memory>
 #include "Entities/Ant.hpp"
 #include "../Globals.hpp"
 
 class Anthill {
     std::vector<Ant> ants;
-    sf::Texture * antTex = nullptr;
+    std::shared_ptr<sf::Texture> antTex;
 public:
-    explicit Anthill(sf::Texture * _antTex);
-    void UpdateAnts();
+    Anthill(std::shared_ptr<sf::Texture> _tex);
     std::vector<Ant> GetAnts(){ return ants; }
+    void UpdateAnts();
 };
 
 

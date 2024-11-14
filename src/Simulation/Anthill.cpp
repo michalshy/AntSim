@@ -11,8 +11,10 @@ void Anthill::UpdateAnts() {
     }
 }
 
-Anthill::Anthill(sf::Texture * _antTex) {
-    antTex = _antTex;
+Anthill::Anthill(std::shared_ptr<sf::Texture> _tex)
+{
+    antTex = _tex;
+    // Development purposes adding 1 ant for now
     for(u8 i = 0U; i < 1U; i++)
     {
         ants.emplace_back(antTex);

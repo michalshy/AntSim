@@ -5,16 +5,15 @@
 #ifndef ANTSIMULATOR_TEXTUREMANAGER_HPP
 #define ANTSIMULATOR_TEXTUREMANAGER_HPP
 
-
+#include <memory>
 #include <vector>
 #include "SFML/Graphics/Texture.hpp"
 
 class TextureManager {
-    std::vector<sf::Texture*> texes;
+    std::vector<std::shared_ptr<sf::Texture>> texes;
 public:
     TextureManager();
-    sf::Texture* getFromId(int id);
-    ~TextureManager();
+    std::shared_ptr<sf::Texture> getFromId(int id);
 };
 
 enum TexCodes

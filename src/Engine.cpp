@@ -11,10 +11,10 @@ void Engine::ThreadedAnts(Engine* eng)
 }
 
 Engine::Engine() {
-    inputManager = new InputManager();
-    tM = new TextureManager();
-    mainWindow = new MainWindow(tM->getFromId(TexCodes::BACKGROUND));
-    ants = new Anthill(tM->getFromId(TexCodes::ANT));
+    inputManager = std::make_unique<InputManager>();
+    tM = std::make_unique<TextureManager>();
+    mainWindow = std::make_unique<MainWindow>(tM->getFromId(TexCodes::BACKGROUND));
+    ants = std::make_unique<Anthill>(tM->getFromId(TexCodes::ANT));
 }
 
 void Engine::Loop() {
@@ -43,10 +43,3 @@ void Engine::Loop() {
     }
 }
 
-Engine::~Engine()
-{
-    delete mainWindow;
-    delete ants;
-    delete tM;
-    delete inputManager;
-}

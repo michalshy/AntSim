@@ -5,6 +5,7 @@
 #ifndef ANTSIMULATOR_ENGINE_HPP
 #define ANTSIMULATOR_ENGINE_HPP
 
+#include <memory>
 #include "Graphics/MainWindow.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
@@ -17,12 +18,11 @@ class Engine {
 public:
     explicit Engine();
     void Loop();
-    ~Engine();
 protected:
-    TextureManager * tM;
-    MainWindow * mainWindow;
-    Anthill * ants;
-    InputManager * inputManager;
+    std::unique_ptr<TextureManager> tM;
+    std::unique_ptr<MainWindow> mainWindow;
+    std::unique_ptr<Anthill> ants;
+    std::unique_ptr<InputManager> inputManager;
 };
 
 

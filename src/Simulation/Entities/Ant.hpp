@@ -4,6 +4,7 @@
 
 #ifndef ANTSIMULATOR_ANT_HPP
 #define ANTSIMULATOR_ANT_HPP
+#include <memory>
 #include "SFML/Graphics.hpp"
 #include "../../Graphics/Textures/TextureManager.hpp"
 #include "../../Logic/Timer.hpp"
@@ -13,7 +14,7 @@ class Ant {
     const float speed = 0.5f;
     double dt;
 public:
-    explicit Ant(sf::Texture* tex);
+    explicit Ant(std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);
     void Behaviour();
 protected:

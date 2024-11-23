@@ -15,14 +15,15 @@
 
 class Engine {
     static void ThreadedAnts(Engine* eng);
+    Timer delta_timer;
 public:
     explicit Engine();
     void Loop();
 protected:
-    std::unique_ptr<TextureManager> tM;
-    std::unique_ptr<MainWindow> mainWindow;
+    std::unique_ptr<TextureManager> texture_manager;
+    std::unique_ptr<MainWindow> main_window;
     std::unique_ptr<Anthill> ants;
-    std::unique_ptr<InputManager> inputManager;
+    std::unique_ptr<InputManager> input_manager;
 };
 
 

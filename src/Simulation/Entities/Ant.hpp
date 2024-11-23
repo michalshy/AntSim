@@ -16,7 +16,7 @@ class Ant {
 public:
     explicit Ant(std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);
-    void Behaviour();
+    void Behaviour(u32 dt);
 protected:
     sf::RectangleShape ant;
 };

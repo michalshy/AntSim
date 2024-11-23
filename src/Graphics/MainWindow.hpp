@@ -14,15 +14,15 @@
 #include <cmath>
 
 class MainWindow{
-    //Window section
-    sf::RenderWindow window = sf::RenderWindow{ { WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator"};
+    ///Window section
+    sf::RenderWindow window;
 
-    //AntView
+    ///AntView
     AntView antV;
     bool dragging;
     sf::Vector2i mousePos;
 
-    //For background
+    ///For background
     sf::FloatRect fBounds;
     sf::IntRect iBounds;
     sf::Sprite background;
@@ -30,7 +30,7 @@ class MainWindow{
     float spriteOffsetY;
     u32 textureHeight;
 
-    //UiView
+    ///UiView
     UiView uiView;
 public:
     MainWindow(std::shared_ptr<sf::Texture> _backgroundTex);

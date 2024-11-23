@@ -9,15 +9,14 @@
 #include "../Globals.hpp"
 
 class Timer {
-    static sf::Clock clk;
-    static sf::Time dt;
+    sf::Clock clk;
+    sf::Time dt;
 public:
     Timer();
-    static void CheckTimestep();
-    static void Init();
-    static sf::Time GetElapsed(){ return clk.getElapsedTime(); }
-    static void Restart(){ dt = clk.restart(); }
-    static sf::Time GetDt(){ return dt; }
+    const void CheckTimestep();
+    const sf::Time GetElapsed(){ return clk.getElapsedTime(); }
+    const void Restart(){ dt = clk.restart(); }
+    const sf::Time GetDt(){ return dt; }
 };
 
 

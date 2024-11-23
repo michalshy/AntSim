@@ -7,39 +7,37 @@
 
 void Engine::ThreadedAnts(Engine* eng)
 {
-    eng->ants->UpdateAnts();
+    eng->ants->UpdateAnts(eng->delta_timer.GetDt().asMicroseconds());
 }
 
 Engine::Engine() {
-    inputManager = std::make_unique<InputManager>();
-    tM = std::make_unique<TextureManager>();
-    mainWindow = std::make_unique<MainWindow>(tM->getFromId(TexCodes::BACKGROUND));
-    ants = std::make_unique<Anthill>(tM->getFromId(TexCodes::ANT));
+    delta_timer = Timer();
+    input_manager = std::make_unique<InputManager>();
+    texture_manager = std::make_unique<TextureManager>();
+    main_window = std::make_unique<MainWindow>(texture_manager->getFromId(TexCodes::BACKGROUND));
+    ants = std::make_unique<Anthill>(texture_manager->getFromId(TexCodes::ANT));
 }
 
 void Engine::Loop() {
-    //Init timer
-    Timer::Init();
-    mainWindow->SetActive(true);
+    main_window->SetActive(true);
     //Ready thread
-    sf::Thread antThread(&(ThreadedAnts), this);
-    while(mainWindow->IsOpen())
+    sf::Thread ant_thread(&(ThreadedAnts), this);
+    while(main_window->IsOpen())
     {
         //determine timestep TODO: WRITE APPROPRIATE HANDLER
-        Timer::CheckTimestep();
+        delta_timer.CheckTimestep();
         //start thread
-        antThread.launch();
+        ant_thread.launch();
         //set view
-        mainWindow->SetViewOnAnts();
+        main_window->SetViewOnAnts();
         //check for events
-        mainWindow->ProcessEvents();
+        main_window->ProcessEvents();
         //input managing
-        inputManager->CheckInputs(*mainWindow);
+        input_manager->CheckInputs(*main_window);
         //draw
-        mainWindow->Draw(*ants);
+        main_window->Draw(*ants);
         //drawing and updating in parallel
-        antThread.wait();
-        
+        ant_thread.wait();
     }
 }
 

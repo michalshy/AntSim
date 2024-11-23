@@ -4,13 +4,11 @@
 
 #include "Timer.hpp"
 
-Timer::Timer() = default;
-
-void Timer::Init() {
+Timer::Timer() {
     clk = sf::Clock();
-}
+};
 
-void Timer::CheckTimestep() {
+const void Timer::CheckTimestep() {
     Timer::Restart();
     if(dt > sf::seconds(TimeConsts::STEP))
     {

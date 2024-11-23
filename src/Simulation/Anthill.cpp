@@ -4,10 +4,10 @@
 
 #include "Anthill.hpp"
 
-void Anthill::UpdateAnts() {
+void Anthill::UpdateAnts(u32 dt) {
     for(Ant& ant: ants)
     {
-        ant.Behaviour();
+        ant.Behaviour(dt);
     }
 }
 

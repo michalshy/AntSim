@@ -15,7 +15,7 @@ class Anthill {
 public:
     Anthill(std::shared_ptr<sf::Texture> _tex);
     std::vector<Ant> GetAnts(){ return ants; }
-    void UpdateAnts();
+    void UpdateAnts(u32 dt);
 };
 
 

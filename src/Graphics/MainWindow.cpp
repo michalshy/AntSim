@@ -6,6 +6,7 @@
 
 MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
 {
+    window.create({ WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator");
     window.setFramerateLimit(144);
     antV = AntView();
     dragging = false;
@@ -26,6 +27,8 @@ MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
 
 void MainWindow::Draw(Anthill & ants){
         GetWindow().clear(sf::Color(150, 75, 0, 255));
+
+        GetWindow().setView(antV.ReturnView());
         window.draw(background);
         for(Ant& ant : ants.GetAnts())
         {
@@ -36,7 +39,6 @@ void MainWindow::Draw(Anthill & ants){
         //DRAWING UI HERE
 
 
-        GetWindow().setView(antV.ReturnView());
 
         GetWindow().display();
 }

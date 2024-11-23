@@ -23,6 +23,7 @@ set(lib_files
         Simulation/Environment/Walls.hpp
         Simulation/Environment/Wall.cpp
         Simulation/Environment/Walls.cpp
+        Common/Random/Random.hpp
 )
 
 add_library(ant_simulator_lib

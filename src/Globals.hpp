@@ -11,6 +11,10 @@ using s16 = int16_t;
 using s32 = int32_t;
 using s64 = int64_t;
 
+namespace AntHillConsts {
+    constexpr u8 ANT_NUMBER = 40;
+}
+
 namespace AntConsts {
     constexpr u8 HEIGHT = 20;
     constexpr u8 WIDTH = 15;

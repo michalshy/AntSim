@@ -4,18 +4,17 @@
 
 #include "Anthill.hpp"
 
+Anthill::Anthill(std::shared_ptr<sf::Texture> _tex)
+{
+    for(u8 i = 0U; i < AntHillConsts::ANT_NUMBER; i++)
+    {
+        ants.emplace_back(ant_spawn_generator.Generate(), _tex);
+    }
+}
+
 void Anthill::UpdateAnts(sf::Time dt) {
     for(Ant& ant: ants)
     {
         ant.Behaviour(dt);
-    }
-}
-
-Anthill::Anthill(std::shared_ptr<sf::Texture> _tex)
-{
-    // Development purposes adding 1 ant for now
-    for(u8 i = 0U; i < 1U; i++)
-    {
-        ants.emplace_back(_tex);
     }
 }

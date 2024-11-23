@@ -11,11 +11,11 @@
 #include "../../Globals.hpp"
 
 class Ant {
-    const float speed = 0.5f;
+    const float speed = 100.0f;
 public:
     explicit Ant(std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);
-    void Behaviour(u32 dt);
+    void Behaviour(sf::Time dt);
 protected:
     sf::RectangleShape ant;
 };

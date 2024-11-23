@@ -6,7 +6,7 @@
 #include <iostream>
 
 void Engine::ThreadedAnts(Engine* eng) {
-    eng->ants->UpdateAnts(eng->delta_timer.GetDt().asMicroseconds());
+    eng->ants->UpdateAnts(eng->delta_timer.GetDt());
 }
 
 Engine::Engine() {
@@ -19,6 +19,7 @@ Engine::Engine() {
 
 void Engine::Loop() {
     main_window->SetActive(true);
+    delta_timer.Restart();
     //Ready thread
     sf::Thread ant_thread(&(ThreadedAnts), this);
     while(main_window->IsOpen())

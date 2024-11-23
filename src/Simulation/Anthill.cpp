@@ -4,7 +4,7 @@
 
 #include "Anthill.hpp"
 
-void Anthill::UpdateAnts(u32 dt) {
+void Anthill::UpdateAnts(sf::Time dt) {
     for(Ant& ant: ants)
     {
         ant.Behaviour(dt);
@@ -13,7 +13,6 @@ void Anthill::UpdateAnts(u32 dt) {
 
 Anthill::Anthill(std::shared_ptr<sf::Texture> _tex)
 {
-    printf("anthill %x\n", _tex);
     // Development purposes adding 1 ant for now
     for(u8 i = 0U; i < 1U; i++)
     {

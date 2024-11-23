@@ -10,7 +10,6 @@ TextureManager::TextureManager() {
     std::shared_ptr<sf::Texture> ant = std::make_shared<sf::Texture>();
     ant->loadFromFile("../../src/Graphics/Textures/Images/ant.png");
     texes.push_back(ant);
-    printf("tex %x\n", ant);
 
     //Background
     std::shared_ptr<sf::Texture> background = std::make_shared<sf::Texture>();

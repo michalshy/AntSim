@@ -10,7 +10,7 @@
 class InputManager
 {
 public:
-    void CheckInputs(MainWindow& mainWin);
+    void CheckInputs(MainWindow& main_win);
 };
 
 #endif //INPUTMANAGER_HPP

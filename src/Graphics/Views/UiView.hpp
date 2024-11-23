@@ -5,13 +5,11 @@
 #ifndef ANTSIMULATOR_UIVIEW_HPP
 #define ANTSIMULATOR_UIVIEW_HPP
 
-#include "SFML/Graphics.hpp"
+#include "View.hpp"
 
-class UiView {
-    sf::View uiView;
+class UiView : public View {
 public:
-    UiView();
-    sf::View ReturnView(){ return uiView; }
+    explicit UiView();
 };
 
 

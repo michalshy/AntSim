@@ -11,24 +11,20 @@ using s16 = int16_t;
 using s32 = int32_t;
 using s64 = int64_t;
 
-namespace AntConsts
-{
+namespace AntConsts {
     constexpr u8 HEIGHT = 20;
     constexpr u8 WIDTH = 15;
 }
 
-namespace MathConsts
-{
+namespace MathConsts {
     constexpr double PI = 3.14; 
 }
 
-namespace TimeConsts
-{
+namespace TimeConsts {
     constexpr double STEP = 0.1;
 }
 
-namespace WindowParams
-{
+namespace WindowParams {
     constexpr u16 WIDTH = 1600;
     constexpr u16 HEIGHT = 800;
 }

@@ -6,8 +6,9 @@
 #include "Ant.hpp"
 
 Ant::Ant(std::shared_ptr<sf::Texture> tex) {
+    printf("ant%x\n", tex);
     ant.setSize(sf::Vector2f(AntConsts::WIDTH, AntConsts::HEIGHT));
-    ant.setTexture((const sf::Texture*)(tex.get()));
+    ant.setTexture((sf::Texture*)(tex.get()));
     ant.setPosition(0,0); //TODO: REMOVE IN FAVOUR OF POSITION IN ANTHILL
     ant.setOrigin(sf::Vector2f((float(AntConsts::WIDTH)/2), (float(AntConsts::HEIGHT)/2)));
 }

@@ -18,33 +18,32 @@ class MainWindow{
     sf::RenderWindow window;
 
     ///AntView
-    AntView antV;
+    AntView ant_view;
     bool dragging;
-    sf::Vector2i mousePos;
+    sf::Vector2i mouse_pos;
 
     ///For background
-    sf::FloatRect fBounds;
-    sf::IntRect iBounds;
+    sf::FloatRect f_bounds;
+    sf::IntRect i_bounds;
     sf::Sprite background;
-    float viewOffsetY;
-    float spriteOffsetY;
-    u32 textureHeight;
+    float view_offset_y;
+    float sprite_offset_y;
+    u32 texture_height;
 
     ///UiView
-    UiView uiView;
+    UiView ui_view;
 public:
-    MainWindow(std::shared_ptr<sf::Texture> _backgroundTex);
+    MainWindow(std::shared_ptr<sf::Texture> _background_tex);
     void Draw(Anthill & ants);
     sf::RenderWindow &GetWindow(){ return window; }
     bool SetActive(bool state);
     bool IsOpen(){ return window.isOpen(); }
     void ProcessEvents();
     void SetViewOnAnts();
-    void InputManaging();
     void ZoomViewAt(sf::Vector2i pixel, float zoom);
     void MoveRelativeToMouse();
     void AdjustOnResize();
-    void SetMousePos(sf::Vector2i mousePosProc);
+    void SetMousePos(sf::Vector2i mouse_pos_proc);
     void SetDragging(bool state);
 };
 

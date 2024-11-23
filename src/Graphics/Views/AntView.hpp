@@ -5,13 +5,11 @@
 #ifndef ANTSIMULATOR_ANTVIEW_HPP
 #define ANTSIMULATOR_ANTVIEW_HPP
 
-#include "SFML/Graphics.hpp"
+#include "View.hpp"
 
-class AntView {
-    sf::View antV;
+class AntView : public View {
 public:
-    AntView();
-    sf::View& ReturnView(){ return antV; }
+    explicit AntView();
 };
 
 

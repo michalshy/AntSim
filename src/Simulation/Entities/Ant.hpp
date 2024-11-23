@@ -12,7 +12,6 @@
 
 class Ant {
     const float speed = 0.5f;
-    double dt;
 public:
     explicit Ant(std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);

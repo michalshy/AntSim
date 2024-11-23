@@ -8,37 +8,35 @@ MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
 {
     window.create({ WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator");
     window.setFramerateLimit(144);
-    antV = AntView();
+    ant_view = AntView();
     dragging = false;
-    mousePos = sf::Mouse::getPosition();
+    mouse_pos = sf::Mouse::getPosition();
 
     //Background section
-    fBounds = sf::FloatRect(-25000.f, -15000.f, 50000.f, 30000.f);
-    iBounds = sf::IntRect(fBounds);
-    background = sf::Sprite((* _backgroundTex), iBounds);
-    background.setPosition(fBounds.left, fBounds.top - 1000.f + antV.ReturnView().getSize().y);
-    viewOffsetY = 0;
-    spriteOffsetY = 0;
-    textureHeight = _backgroundTex->getSize().y;
+    f_bounds = sf::FloatRect(-25000.f, -15000.f, 50000.f, 30000.f);
+    i_bounds = sf::IntRect(f_bounds);
+    background = sf::Sprite((* _backgroundTex), i_bounds);
+    background.setPosition(f_bounds.left, f_bounds.top - 1000.f + ant_view.ReturnView().getSize().y);
+    view_offset_y = 0;
+    sprite_offset_y = 0;
+    texture_height = _backgroundTex->getSize().y;
 
     //UiView
-    uiView = UiView();
+    ui_view = UiView();
 }
 
 void MainWindow::Draw(Anthill & ants){
         GetWindow().clear(sf::Color(150, 75, 0, 255));
 
-        GetWindow().setView(antV.ReturnView());
+        GetWindow().setView(ant_view.ReturnView());
         window.draw(background);
         for(Ant& ant : ants.GetAnts())
         {
-            ant.DrawAnt(this->GetWindow());
+            ant.DrawAnt(GetWindow());
         }
 
-        GetWindow().setView(uiView.ReturnView());
+        GetWindow().setView(ui_view.ReturnView());
         //DRAWING UI HERE
-
-
 
         GetWindow().display();
 }
@@ -77,48 +75,36 @@ void MainWindow::ProcessEvents() {
 }
 
 void MainWindow::SetViewOnAnts() {
-    window.setView(antV.ReturnView()); 
+    window.setView(ant_view.ReturnView()); 
 }
 
-void MainWindow::InputManaging() {
-        if(sf::Mouse::isButtonPressed((sf::Mouse::Middle)))
-        {
-            mousePos = sf::Mouse::getPosition();
-            dragging = true;
-        }
-        else
-        {
-            dragging = false;
-        }
-}
-
-void MainWindow :: ZoomViewAt(sf::Vector2i pixel, float zoom)
+void MainWindow::ZoomViewAt(sf::Vector2i pixel, float zoom)
 {
-	const sf::Vector2f beforeCoord{ window.mapPixelToCoords(pixel) };
-	antV.ReturnView().zoom(zoom);
-	const sf::Vector2f afterCoord{ window.mapPixelToCoords(pixel) };
-	const sf::Vector2f offsetCoords{ beforeCoord - afterCoord };
-	antV.ReturnView().move(offsetCoords);
-	window.setView(antV.ReturnView());
+	const sf::Vector2f before_coord{ window.mapPixelToCoords(pixel) };
+	ant_view.ReturnView().zoom(zoom);
+	const sf::Vector2f after_coord{ window.mapPixelToCoords(pixel) };
+	const sf::Vector2f offset_coords{ before_coord - after_coord };
+	ant_view.ReturnView().move(offset_coords);
+	window.setView(ant_view.ReturnView());
 }
 
 void MainWindow::MoveRelativeToMouse()
 {
     sf::Vector2i nextPos = sf::Mouse::getPosition();
-    const sf::Vector2f offsetCoords{ mousePos - nextPos };
-    antV.ReturnView().move(offsetCoords);
-    window.setView(antV.ReturnView());
+    const sf::Vector2f offset_coords{ mouse_pos - nextPos };
+    ant_view.ReturnView().move(offset_coords);
+    window.setView(ant_view.ReturnView());
 }
 
 void MainWindow::AdjustOnResize()
 {
     float ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
-    antV.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
+    ant_view.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
 }
 
-void MainWindow::SetMousePos(sf::Vector2i mousePosProc)
+void MainWindow::SetMousePos(sf::Vector2i mouse_pos_proc)
 {
-    mousePos = mousePosProc;
+    mouse_pos = mouse_pos_proc;
 }
 
 void MainWindow::SetDragging(bool state)

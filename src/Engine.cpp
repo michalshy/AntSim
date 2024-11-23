@@ -5,8 +5,7 @@
 #include "Engine.hpp"
 #include <iostream>
 
-void Engine::ThreadedAnts(Engine* eng)
-{
+void Engine::ThreadedAnts(Engine* eng) {
     eng->ants->UpdateAnts(eng->delta_timer.GetDt().asMicroseconds());
 }
 

@@ -30,4 +30,7 @@ void Environment::DrawBounds(sf::RenderWindow &window)
     window.draw(bounds.left);
     window.draw(bounds.right);
     window.draw(bounds.down);
+
+    Marker m = Marker(sf::CircleShape(10), 100, 100);
+    m.draw(window);
 }

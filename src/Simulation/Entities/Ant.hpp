@@ -17,15 +17,20 @@ Random<u32> ant_behaviour_decision(0, 100);
 }
 
 class Ant {
-    u32 certainity;
-    u32 turns;
-    float angle;
 public:
     explicit Ant(const u16 rotation, std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);
     void Behaviour(sf::Time dt);
+private:
+    void UpdateRadar();
+
 protected:
     sf::RectangleShape ant;
+    sf::ConvexShape radar;
+
+    u32 certainity;
+    u32 turns;
+    float angle;
 };
 
 

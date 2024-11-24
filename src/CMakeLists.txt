@@ -18,11 +18,12 @@ set(lib_files
         Globals.hpp
         Logic/Managers/InputManager.hpp
         Logic/Managers/InputManager.cpp
-        Simulation/Environment/Entities/Wall.hpp
+        Simulation/Environment/Objects/Wall.hpp
         Simulation/Environment/Environment.hpp
-        Simulation/Environment/Entities/Wall.cpp
+        Simulation/Environment/Objects/Wall.cpp
         Simulation/Environment/Environment.cpp
-        Common/Random/Random.hpp
+        Common/Markers/Marker.hpp
+        Common/Random/Random.hpp        
 )
 
 add_library(ant_simulator_lib

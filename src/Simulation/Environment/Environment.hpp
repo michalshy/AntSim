@@ -4,8 +4,10 @@
 
 #ifndef __ENVIRONMENT_HPP__
 #define __ENVIRONMENT_HPP__
+
 #include "SFML/Graphics.hpp"
 #include "../../Globals.hpp"
+#include "../../Common/Markers/Marker.hpp"
 
 struct Bounds {
     sf::RectangleShape upper;

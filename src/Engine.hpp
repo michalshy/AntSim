@@ -12,6 +12,7 @@
 #include "Logic/Timer.hpp"
 #include "SFML/System.hpp"
 #include "Logic/Managers/InputManager.hpp"
+#include "Simulation/Environment/Environment.hpp"
 
 class Engine {
     static void ThreadedAnts(Engine* eng);
@@ -24,6 +25,7 @@ protected:
     std::unique_ptr<Window> window;
     std::unique_ptr<Anthill> ants;
     std::unique_ptr<InputManager> input_manager;
+    std::unique_ptr<Environment> environment;
 };
 
 

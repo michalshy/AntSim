@@ -6,7 +6,7 @@
 
 Anthill::Anthill(std::shared_ptr<sf::Texture> _tex)
 {
-    for(u8 i = 0U; i < AntHillConsts::ANT_NUMBER; i++)
+    for(u8 i = 0U; i < ANTHILL::ANT_NUMBER; i++)
     {
         ants.emplace_back(ant_spawn_generator.Generate(), _tex);
     }

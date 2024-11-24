@@ -13,8 +13,9 @@ Engine::Engine() {
     delta_timer = Timer();
     input_manager = std::make_unique<InputManager>();
     texture_manager = std::make_unique<TextureManager>();
-    window = std::make_unique<Window>(texture_manager->getFromId(TexCodes::BACKGROUND));
-    ants = std::make_unique<Anthill>(texture_manager->getFromId(TexCodes::ANT));
+    window = std::make_unique<Window>(texture_manager->getFromId(TexCodes::BACKGROUND_TEX));
+    ants = std::make_unique<Anthill>(texture_manager->getFromId(TexCodes::ANT_TEX));
+    environment = std::make_unique<Environment>();
 }
 
 void Engine::Loop() {
@@ -35,7 +36,7 @@ void Engine::Loop() {
         //input managing
         input_manager->CheckInputs(*window);
         //draw
-        window->Draw(*ants);
+        window->Draw(*ants, *environment);
         //drawing and updating in parallel
         ant_thread.wait();
     }

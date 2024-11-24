@@ -18,10 +18,10 @@ set(lib_files
         Globals.hpp
         Logic/Managers/InputManager.hpp
         Logic/Managers/InputManager.cpp
-        Simulation/Environment/Wall.hpp
-        Simulation/Environment/Walls.hpp
-        Simulation/Environment/Wall.cpp
-        Simulation/Environment/Walls.cpp
+        Simulation/Environment/Entities/Wall.hpp
+        Simulation/Environment/Environment.hpp
+        Simulation/Environment/Entities/Wall.cpp
+        Simulation/Environment/Environment.cpp
         Common/Random/Random.hpp
 )
 

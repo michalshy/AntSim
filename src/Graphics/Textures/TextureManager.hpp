@@ -18,8 +18,8 @@ public:
 
 enum TexCodes
 {
-    ANT = 0,
-    BACKGROUND = 1,
+    ANT_TEX = 0,
+    BACKGROUND_TEX = 1,
 };
 
 

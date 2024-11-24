@@ -12,13 +12,14 @@
 #include "../../Common/Random/Random.hpp"
 
 namespace{
-Random<float> ant_behaviour_rot(-10.0f,10.0f);
+Random<float> ant_behaviour_rot(-1.0f,1.0f);
 Random<u32> ant_behaviour_decision(0, 100);
 }
 
 class Ant {
-    const float speed = 100.0f;
-    u32 certainity = 80;
+    u32 certainity;
+    u32 turns;
+    float angle;
 public:
     explicit Ant(const u16 rotation, std::shared_ptr<sf::Texture> tex);
     void DrawAnt(sf::RenderWindow & window);

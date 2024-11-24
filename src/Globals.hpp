@@ -11,26 +11,34 @@ using s16 = int16_t;
 using s32 = int32_t;
 using s64 = int64_t;
 
-namespace AntHillConsts {
+namespace ANTHILL {
     constexpr u8 ANT_NUMBER = 40;
 }
 
-namespace AntConsts {
-    constexpr u8 HEIGHT = 20;
-    constexpr u8 WIDTH = 15;
+namespace ANT {
+    constexpr float SPEED = 30.0f;
+    constexpr u8 HEIGHT = 5;
+    constexpr u8 WIDTH = 3;
 }
 
-namespace MathConsts {
+namespace MATH {
     constexpr double PI = 3.14; 
 }
 
-namespace TimeConsts {
+namespace TIME {
     constexpr double STEP = 0.1;
 }
 
-namespace WindowParams {
+namespace WINDOW {
     constexpr u16 WIDTH = 1600;
     constexpr u16 HEIGHT = 800;
+
+    constexpr s16 X_ZERO = -1 * (WIDTH/2);
+    constexpr s16 Y_ZERO = -1 * (HEIGHT/2);
+    constexpr s16 X_END = (WIDTH/2);
+    constexpr s16 Y_END = (HEIGHT/2);
+
+    constexpr u8 BOUND_THICKNESS = 5;
 }
 
 

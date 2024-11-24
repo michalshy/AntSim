@@ -7,6 +7,7 @@
 
 #include <memory>
 #include "../Simulation/Anthill.hpp"
+#include "../Simulation/Environment/Environment.hpp"
 #include "Views/AntView.hpp"
 #include "Views/UiView.hpp"
 #include "SFML/Graphics.hpp"
@@ -34,7 +35,7 @@ class Window{
     UiView ui_view;
 public:
     Window(std::shared_ptr<sf::Texture> _background_tex);
-    void Draw(Anthill & ants);
+    void Draw(Anthill & ants, Environment & env);
     sf::RenderWindow &GetWindow(){ return window; }
     bool SetActive(bool state);
     bool IsOpen(){ return window.isOpen(); }

@@ -6,7 +6,7 @@
 
 Window::Window(std::shared_ptr<sf::Texture> _backgroundTex)
 {
-    window.create({ WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator");
+    window.create({ WINDOW::WIDTH, WINDOW::HEIGHT }, "AntSimulator");
     window.setFramerateLimit(144);
     ant_view = AntView();
     dragging = false;
@@ -25,11 +25,15 @@ Window::Window(std::shared_ptr<sf::Texture> _backgroundTex)
     ui_view = UiView();
 }
 
-void Window::Draw(Anthill & ants){
+void Window::Draw(Anthill & ants, Environment & env){
         GetWindow().clear(sf::Color(150, 75, 0, 255));
 
         GetWindow().setView(ant_view.ReturnView());
+        ///Window based
         window.draw(background);
+        ///Environment based
+        env.Draw(GetWindow());
+        ///Ants based
         for(Ant& ant : ants.GetAnts())
         {
             ant.DrawAnt(GetWindow());
@@ -99,7 +103,7 @@ void Window::MoveRelativeToMouse()
 void Window::AdjustOnResize()
 {
     float ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
-    ant_view.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
+    ant_view.ReturnView().setSize(WINDOW::HEIGHT * ratio, WINDOW::HEIGHT);
 }
 
 void Window::SetMousePos(sf::Vector2i mouse_pos_proc)

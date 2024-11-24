@@ -21,6 +21,7 @@ class Window{
     ///AntView
     AntView ant_view;
     bool dragging;
+    bool drawing;
     sf::Vector2i mouse_pos;
 
     ///For background
@@ -46,6 +47,7 @@ public:
     void AdjustOnResize();
     void SetMousePos(sf::Vector2i mouse_pos_proc);
     void SetDragging(bool state);
+    void SetDrawing(bool state);
 };
 
 #endif //__WINDOW_HPP__

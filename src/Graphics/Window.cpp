@@ -32,7 +32,7 @@ void Window::Draw(Anthill & ants, Environment & env){
         ///Window based
         window.draw(background);
         ///Environment based
-        env.Draw(GetWindow());
+        env.Draw(GetWindow(), drawing);
         ///Ants based
         for(Ant& ant : ants.GetAnts())
         {
@@ -114,4 +114,9 @@ void Window::SetMousePos(sf::Vector2i mouse_pos_proc)
 void Window::SetDragging(bool state)
 {
     dragging = state;
+}
+
+void Window::SetDrawing(bool state)
+{
+    drawing = state;
 }

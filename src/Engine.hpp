@@ -16,6 +16,7 @@
 
 class Engine {
     static void ThreadedAnts(Engine* eng);
+    static void ThreadedEnvironment(Engine* eng);
     Timer delta_timer;
 public:
     explicit Engine();

@@ -17,10 +17,12 @@ struct Bounds {
 };
 
 class Environment{
+    std::vector<Marker<sf::CircleShape>> pheromones;
     Bounds bounds;
 public:
     explicit Environment();
-    void Draw(sf::RenderWindow & window);
+    void Draw(sf::RenderWindow & window, bool drawing);
+    void Update();
 private:
     void DrawBounds(sf::RenderWindow & window);
 };

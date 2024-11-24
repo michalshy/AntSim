@@ -1,5 +1,5 @@
-#ifndef GLOBALS_HPP
-#define GLOBALS_HPP
+#ifndef __GLOBALS_HPP__
+#define __GLOBALS_HPP__
 
 #include <cstdint>
 using u8 = uint8_t;
@@ -34,4 +34,4 @@ namespace WindowParams {
 }
 
 
-#endif
+#endif //__GLOBALS_HPP__

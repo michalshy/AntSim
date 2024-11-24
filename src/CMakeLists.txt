@@ -1,8 +1,8 @@
 set(lib_files 
         Simulation/Entities/Ant.hpp
         Simulation/Entities/Ant.cpp
-        Graphics/MainWindow.hpp
-        Graphics/MainWindow.cpp
+        Graphics/Window.hpp
+        Graphics/Window.cpp
         Engine.hpp
         Engine.cpp
         Graphics/Textures/TextureManager.hpp
@@ -11,7 +11,6 @@ set(lib_files
         Simulation/Anthill.cpp
         Logic/Timer.hpp
         Logic/Timer.cpp
-        Graphics/MainWindow.cpp
         Graphics/Views/UiView.hpp
         Graphics/Views/UiView.cpp
         Graphics/Views/AntView.hpp

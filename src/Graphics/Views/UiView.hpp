@@ -2,8 +2,8 @@
 // Created by Michin on 27.06.2024.
 //
 
-#ifndef ANTSIMULATOR_UIVIEW_HPP
-#define ANTSIMULATOR_UIVIEW_HPP
+#ifndef __UIVIEW_HPP__
+#define __UIVIEW_HPP__
 
 #include "View.hpp"
 
@@ -13,4 +13,4 @@ public:
 };
 
 
-#endif //ANTSIMULATOR_UIVIEW_HPP
+#endif //__UIVIEW_HPP__

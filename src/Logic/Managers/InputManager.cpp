@@ -1,14 +1,14 @@
 #include "InputManager.hpp"
 
-void InputManager::CheckInputs(MainWindow &main_win)
+void InputManager::CheckInputs(Window& window)
 {
         if(sf::Mouse::isButtonPressed((sf::Mouse::Middle)))
         {
-            main_win.SetMousePos(sf::Mouse::getPosition());
-            main_win.SetDragging(true);
+            window.SetMousePos(sf::Mouse::getPosition());
+            window.SetDragging(true);
         }
         else
         {
-            main_win.SetDragging(false);
+            window.SetDragging(false);
         }
 }

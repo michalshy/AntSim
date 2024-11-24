@@ -2,8 +2,8 @@
 // Created by Michin on 23.06.2024.
 //
 
-#ifndef ANTSIMULATOR_ANTHILL_HPP
-#define ANTSIMULATOR_ANTHILL_HPP
+#ifndef __ANTHILL_HPP__
+#define __ANTHILL_HPP__
 
 #include <memory>
 #include <random>
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //ANTSIMULATOR_ANTHILL_HPP
+#endif //__ANTHILL_HPP__

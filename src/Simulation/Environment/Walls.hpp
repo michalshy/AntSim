@@ -2,9 +2,9 @@
 // Created by Michin on 23.06.2024.
 //
 
-#ifndef WALLS_HPP
-#define WALLS_HPP
+#ifndef __WALLS_HPP__
+#define __WALLS_HPP__
 
 
 
-#endif //WALLS_HPP
+#endif //__WALLS_HPP__

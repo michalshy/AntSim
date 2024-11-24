@@ -2,8 +2,8 @@
 // Created by Michin on 23.06.2024.
 //
 
-#ifndef WALL_HPP
-#define WALL_HPP
+#ifndef __WALL_HPP__
+#define __WALL_HPP__
 
 
-#endif //WALL_HPP
+#endif //__WALL_HPP__

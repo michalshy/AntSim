@@ -2,15 +2,15 @@
 // Created by Michin on 29.07.2024.
 //
 
-#ifndef INPUTMANAGER_HPP
-#define INPUTMANAGER_HPP
+#ifndef __INPUTMANAGER_HPP__
+#define __INPUTMANAGER_HPP__
 
-#include "../../Graphics/MainWindow.hpp"
+#include "../../Graphics/Window.hpp"
 
 class InputManager
 {
 public:
-    void CheckInputs(MainWindow& main_win);
+    void CheckInputs(Window& window);
 };
 
-#endif //INPUTMANAGER_HPP
+#endif //__INPUTMANAGER_HPP__

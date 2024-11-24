@@ -2,8 +2,8 @@
 // Created by Michin on 20.06.2024.
 //
 
-#ifndef ANTSIMULATOR_MAINWINDOW_HPP
-#define ANTSIMULATOR_MAINWINDOW_HPP
+#ifndef __WINDOW_HPP__
+#define __WINDOW_HPP__
 
 #include <memory>
 #include "../Simulation/Anthill.hpp"
@@ -13,7 +13,7 @@
 #include "../Globals.hpp"
 #include <cmath>
 
-class MainWindow{
+class Window{
     ///Window section
     sf::RenderWindow window;
 
@@ -33,7 +33,7 @@ class MainWindow{
     ///UiView
     UiView ui_view;
 public:
-    MainWindow(std::shared_ptr<sf::Texture> _background_tex);
+    Window(std::shared_ptr<sf::Texture> _background_tex);
     void Draw(Anthill & ants);
     sf::RenderWindow &GetWindow(){ return window; }
     bool SetActive(bool state);
@@ -47,4 +47,4 @@ public:
     void SetDragging(bool state);
 };
 
-#endif //ANTSIMULATOR_MAINWINDOW_HPP
+#endif //__WINDOW_HPP__

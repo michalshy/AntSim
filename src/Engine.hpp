@@ -2,11 +2,11 @@
 // Created by Michin on 21.06.2024.
 //
 
-#ifndef ANTSIMULATOR_ENGINE_HPP
-#define ANTSIMULATOR_ENGINE_HPP
+#ifndef __ENGINE_HPP__
+#define __ENGINE_HPP__
 
 #include <memory>
-#include "Graphics/MainWindow.hpp"
+#include "Graphics/Window.hpp"
 #include "Graphics/Textures/TextureManager.hpp"
 #include "Simulation/Anthill.hpp"
 #include "Logic/Timer.hpp"
@@ -21,10 +21,10 @@ public:
     void Loop();
 protected:
     std::unique_ptr<TextureManager> texture_manager;
-    std::unique_ptr<MainWindow> main_window;
+    std::unique_ptr<Window> window;
     std::unique_ptr<Anthill> ants;
     std::unique_ptr<InputManager> input_manager;
 };
 
 
-#endif //ANTSIMULATOR_ENGINE_HPP
+#endif //__ENGINE_HPP__

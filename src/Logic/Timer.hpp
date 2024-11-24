@@ -2,8 +2,8 @@
 // Created by Michin on 24.06.2024.
 //
 
-#ifndef ANTSIMULATOR_TIMER_HPP
-#define ANTSIMULATOR_TIMER_HPP
+#ifndef __TIMER_HPP__
+#define __TIMER_HPP__
 
 #include "SFML/System.hpp"
 #include "../Globals.hpp"
@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //ANTSIMULATOR_TIMER_HPP
+#endif //__TIMER_HPP__

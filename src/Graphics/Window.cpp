@@ -2,9 +2,9 @@
 // Created by Michin on 20.06.2024.
 //
 
-#include "MainWindow.hpp"
+#include "Window.hpp"
 
-MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
+Window::Window(std::shared_ptr<sf::Texture> _backgroundTex)
 {
     window.create({ WindowParams::WIDTH, WindowParams::HEIGHT }, "AntSimulator");
     window.setFramerateLimit(144);
@@ -25,7 +25,7 @@ MainWindow::MainWindow(std::shared_ptr<sf::Texture> _backgroundTex)
     ui_view = UiView();
 }
 
-void MainWindow::Draw(Anthill & ants){
+void Window::Draw(Anthill & ants){
         GetWindow().clear(sf::Color(150, 75, 0, 255));
 
         GetWindow().setView(ant_view.ReturnView());
@@ -41,11 +41,11 @@ void MainWindow::Draw(Anthill & ants){
         GetWindow().display();
 }
 
-bool MainWindow::SetActive(bool state) {
+bool Window::SetActive(bool state) {
     return window.setActive(state);
 }
 
-void MainWindow::ProcessEvents() {
+void Window::ProcessEvents() {
     for (auto event = sf::Event{}; window.pollEvent(event);)
     {
         if (event.type == sf::Event::Closed)
@@ -74,11 +74,11 @@ void MainWindow::ProcessEvents() {
     }
 }
 
-void MainWindow::SetViewOnAnts() {
+void Window::SetViewOnAnts() {
     window.setView(ant_view.ReturnView()); 
 }
 
-void MainWindow::ZoomViewAt(sf::Vector2i pixel, float zoom)
+void Window::ZoomViewAt(sf::Vector2i pixel, float zoom)
 {
 	const sf::Vector2f before_coord{ window.mapPixelToCoords(pixel) };
 	ant_view.ReturnView().zoom(zoom);
@@ -88,7 +88,7 @@ void MainWindow::ZoomViewAt(sf::Vector2i pixel, float zoom)
 	window.setView(ant_view.ReturnView());
 }
 
-void MainWindow::MoveRelativeToMouse()
+void Window::MoveRelativeToMouse()
 {
     sf::Vector2i nextPos = sf::Mouse::getPosition();
     const sf::Vector2f offset_coords{ mouse_pos - nextPos };
@@ -96,18 +96,18 @@ void MainWindow::MoveRelativeToMouse()
     window.setView(ant_view.ReturnView());
 }
 
-void MainWindow::AdjustOnResize()
+void Window::AdjustOnResize()
 {
     float ratio = static_cast<float>(window.getSize().x) / static_cast<float>(window.getSize().y);
     ant_view.ReturnView().setSize(WindowParams::HEIGHT * ratio, WindowParams::HEIGHT);
 }
 
-void MainWindow::SetMousePos(sf::Vector2i mouse_pos_proc)
+void Window::SetMousePos(sf::Vector2i mouse_pos_proc)
 {
     mouse_pos = mouse_pos_proc;
 }
 
-void MainWindow::SetDragging(bool state)
+void Window::SetDragging(bool state)
 {
     dragging = state;
 }

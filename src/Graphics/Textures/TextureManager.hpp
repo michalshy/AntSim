@@ -2,8 +2,8 @@
 // Created by Michin on 21.06.2024.
 //
 
-#ifndef ANTSIMULATOR_TEXTUREMANAGER_HPP
-#define ANTSIMULATOR_TEXTUREMANAGER_HPP
+#ifndef __TEXTUREMANAGER_HPP__
+#define __TEXTUREMANAGER_HPP__
 
 #include <memory>
 #include <vector>
@@ -23,4 +23,4 @@ enum TexCodes
 };
 
 
-#endif //ANTSIMULATOR_TEXTUREMANAGER_HPP
+#endif //__TEXTUREMANAGER_HPP__

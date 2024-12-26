@@ -10,6 +10,7 @@
 #include "../../Logic/Timer.hpp"
 #include "../../Globals.hpp"
 #include "../../Common/Random/Random.hpp"
+#include "../../Common/Shapes/Shapes.hpp"
 
 namespace{
 Random<float> ant_behaviour_rot(-1.0f,1.0f);
@@ -26,7 +27,7 @@ private:
 
 protected:
     sf::RectangleShape ant;
-    sf::ConvexShape radar;
+    AntShapes::Radar radar;
 
     u32 certainity;
     u32 turns;

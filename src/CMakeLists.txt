@@ -24,6 +24,7 @@ set(lib_files
         Simulation/Environment/Environment.cpp
         Common/Markers/Marker.hpp
         Common/Random/Random.hpp        
+        Common/Shapes/Shapes.hpp  
 )
 
 add_library(ant_simulator_lib

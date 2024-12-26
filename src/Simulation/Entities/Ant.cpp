@@ -6,15 +6,16 @@
 #include "Ant.hpp"
 
 Ant::Ant(const u16 rotation, std::shared_ptr<sf::Texture> tex) {
-    radar.setPointCount(5);
-    radar.setOrigin(ant.getPosition());
-    radar.setFillColor(sf::Color(255,255,255,20));
-    radar.setPoint(0, sf::Vector2f(ant.getPosition().x-10, ant.getPosition().y));
-    radar.setPoint(1, sf::Vector2f(ant.getPosition().x+10, ant.getPosition().y));
-    radar.setPoint(2, sf::Vector2f(ant.getPosition().x+20, ant.getPosition().y - 20));
-    radar.setPoint(3, sf::Vector2f(ant.getPosition().x, ant.getPosition().y - 30));
-    radar.setPoint(4, sf::Vector2f(ant.getPosition().x-20, ant.getPosition().y - 20));
-    radar.setRotation(rotation);
+    // radar.setPointCount(5);
+    // radar.setOrigin(ant.getPosition());
+    // radar.setFillColor(sf::Color(255,255,255,20));
+    // radar.setPoint(0, sf::Vector2f(ant.getPosition().x-10, ant.getPosition().y));
+    // radar.setPoint(1, sf::Vector2f(ant.getPosition().x+10, ant.getPosition().y));
+    // radar.setPoint(2, sf::Vector2f(ant.getPosition().x+20, ant.getPosition().y - 20));
+    // radar.setPoint(3, sf::Vector2f(ant.getPosition().x, ant.getPosition().y - 30));
+    // radar.setPoint(4, sf::Vector2f(ant.getPosition().x-20, ant.getPosition().y - 20));
+    radar = AntShapes::Radar(ant.getPosition());
+    radar.SetRotation(rotation);
 
     certainity = 90;
     turns = 0;
@@ -29,7 +30,7 @@ Ant::Ant(const u16 rotation, std::shared_ptr<sf::Texture> tex) {
 
 void Ant::DrawAnt(sf::RenderWindow & window) {
     window.draw(ant);
-    window.draw(radar);
+    radar.Draw(window);
 }
 
 void Ant::Behaviour(sf::Time dt) {
@@ -44,7 +45,7 @@ void Ant::Behaviour(sf::Time dt) {
     ///Check for movement
     if(vel.x != 0 && vel.y != 0)
         ant.move(vel);
-        radar.move(vel);
+        radar.Move(vel);
     
     ///Check rotation
     if(turns == 0)
@@ -55,7 +56,7 @@ void Ant::Behaviour(sf::Time dt) {
     if(turns > 0)
     {
         ant.rotate(angle);
-        radar.rotate(angle);
+        radar.Rotate(angle);
         //radar.rotate(angle);
         turns--;
     }
